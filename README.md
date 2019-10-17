@@ -27,7 +27,7 @@ Fill me in
 * **Rammah**
 * **Riaz**
 * **Philip**
-* **Kasper**
+* **Kacper**
 * **Nurul**
 * **Brandon**
 

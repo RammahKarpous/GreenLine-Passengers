@@ -8,13 +8,13 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html">
-  
-  <h:head>
-    <title>Admin login</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </h:head>
+
   <h:body>
-   
+      <ui:composition template="template.xhtml">
+          <ui:define name="content">
+              <h1>Admin login</h1>
+          </ui:define>
+      </ui:composition>
     
     
   </h:body>

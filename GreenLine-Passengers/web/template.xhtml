@@ -6,16 +6,14 @@
  xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title><ui:insert name="title">GreenLine Passenger: Template</ui:insert></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
-        <h:outputStylesheet library="css" name="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </h:head>
     <h:body>
-        <nav class="nav">
-            <h:link value="Home" outcome=""/>
-            <h:link value="Current Flights" outcome=""/>
-            <h:link value="Register" outcome=""/>
-            <h:link class="button" value="Sing In" outcome=""/>
-        </nav>
+      
+      <nav class="nav">
+        <h:link value="Home" outcome="index"/>
+        <h:link class="button" value="Sing In" outcome="admin-login"/>
+      </nav>
         
         <div id="content" class="content">
             <ui:insert name="content"></ui:insert>

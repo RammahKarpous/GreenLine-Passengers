@@ -14,6 +14,10 @@
 }
 body {
   margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -33,7 +37,7 @@ a {
   margin: auto;
 }
 
-.button, .form-wrapper .inputField:last-child input {
+.button, .form-wrapper .inputField .button {
   border: 2px solid;
   border-color: #35495E;
   color: #35495E;
@@ -41,6 +45,11 @@ a {
   border-radius: 5px;
   background: transparent;
   width: initial !important;
+  cursor: pointer;
+}
+.button:hover, .form-wrapper .inputField .button:hover {
+  background: #35495E;
+  color: white;
 }
 
 #mainNav .wrapper {
@@ -75,9 +84,8 @@ a {
   border-radius: 5px;
   border: 2px solid #35495E;
 }
-.form-wrapper .inputField:last-child input {
-  border-color: white;
-  color: white;
+.form-wrapper .inputField .button {
+  margin-right: 10px;
 }
 
 footer {

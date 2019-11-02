@@ -13,9 +13,14 @@
     <h:body>
 
         <nav id="mainNav" >
-            <h:graphicImage value="resources/img/GLP Icon.png"/>
-            <h:link value="Home" outcome="index"/>
-            <h:link class="button" value="Sing In" outcome="login"/>
+          <div class="wrapper">
+            <h:graphicImage value="resources/img/glp-logo.png" alt=""/>
+
+            <div class="links">
+              <h:link value="Home" outcome="index"/>
+              <h:link class="button" value="Sing In" outcome="login"/>
+            </div>
+          </div>
         </nav>
 
         <div id="content" class="content">
@@ -23,12 +28,16 @@
         </div>
 
         <footer>
+          <div class="wrapper">
+            <h:graphicImage value="resources/img/glp-white-logo.png"/>
+            
             <nav id="footerNav">
-                <h:link value="Home" outcome="index"/>
-                <h:link class="button" value="Sing In" outcome="login"/>
+              <h:link value="Home" outcome="index"/>
+              <h:link class="button" value="Sing In" outcome="login"/>
             </nav>
-            <h:graphicImage value="resources/img/GLP Logo white.png"/>
-            <p>(c) Copyright - GreenLine Passenger. All rights reserved</p>
+          </div>
+          
+          <p class="copyright">&copy; Copyright - GreenLine Passenger. All rights reserved</p>
         </footer>
 
       <h:outputScript library="js" name="script.js" />

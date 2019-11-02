@@ -7,30 +7,76 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:body>
         <ui:composition template="template.xhtml">
             <ui:define name="content">
                 <h1>Register</h1>
                 <h:form>
-                <p>
-                    <h:outputText value ="Username: "/>
-                    <h:inputText id="username" value=""/>
-                    <h:message for="username"/>
-                </p>
-                <p>
-                    <h:outputText value ="Password: "/>
-                    <h:inputSecret id="password" value=""/>
-                    <h:message for="password"/>
-                </p>
-                <p>
-                    <h:commandButton action="#" value="Login"/> Don't have an account? <h:link value="Register here" outcome="#"/>
-                </p>
-                    </h:form>
+                    <p>
+                        <h:outputText value ="FirstName: "/>
+                        <h:inputText id="firstName" value=""/>
+                        <h:message for="firstName"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="MiddleName: "/>
+                        <h:inputText id="middleName" value=""/>
+                        <h:message for="middleName"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="LastName: "/>
+                        <h:inputText id="lastName" value=""/>
+                        <h:message for="lastName"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="Email: "/>
+                        <h:inputText id="email" value="" />
+                        <h:message for="email"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="Password: "/>
+                        <h:inputSecret id="password" value=""/>
+                        <h:message for="password"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="ComfirmPassword: "/>
+                        <h:inputSecret id="confirmPassword" value=""/>
+                        <h:message for="confirmPassword"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="Country: "/>
+                        <h:selectOneListbox id="county" value="">
+                            <f:selectItem itemValue="" itemLabel=""/>
+                        </h:selectOneListbox>
+                        <h:message for="county"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="City: "/>
+                        <h:inputText id="city" value="" />
+                        <h:message for="city"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="Telephone number: "/>
+                        <h:inputText id="telephoneNumber" value="" />
+                        <h:message for="telephoneNumber"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="Passport number: "/>
+                        <h:inputText id="passportNumber" value="" />
+                        <h:message for="passportNumber"/>
+                    </p>
+                    <p>
+                        <h:outputText value ="Emergency contact number: "/>
+                        <h:inputText id="emergencyContactNumber" value="" />
+                        <h:message for="emergencyContactNumber"/>
+                    </p>
+                    <p>
+                        <h:commandButton action="#" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+                    </p>
+                </h:form>
             </ui:define>
         </ui:composition>
-
-
     </h:body>
 </html>

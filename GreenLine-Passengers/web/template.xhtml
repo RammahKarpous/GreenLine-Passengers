@@ -11,31 +11,30 @@
         <h:outputStylesheet library="css" name="app.css" />
     </h:head>
     <h:body>
+      <nav id="mainNav" >
+        <div class="wrapper">
+          <h:graphicImage value="resources/img/glp-logo.png" alt=""/>
 
-        <nav id="mainNav" >
-          <div class="wrapper">
-            <h:graphicImage value="resources/img/glp-logo.png" alt=""/>
-
-            <div class="links">
-              <h:link value="Home" outcome="index"/>
-              <h:link class="button" value="Sing In" outcome="login"/>
-            </div>
+          <div class="links">
+            <h:link value="Home" outcome="index"/>
+            <h:link class="button" value="Sing In" outcome="login"/>
           </div>
-        </nav>
-
-        <div id="content" class="content">
-            <ui:insert name="content"></ui:insert>
         </div>
+      </nav>
 
-        <footer>
-          <div class="wrapper">
-            <h:graphicImage value="resources/img/glp-white-logo.png"/>
-            
-            <nav id="footerNav">
-              <h:link value="Home" outcome="index"/>
-              <h:link value="Sing In" outcome="login"/>
-            </nav>
-          </div>
+      <div id="content" class="content">
+          <ui:insert name="content"></ui:insert>
+      </div>
+
+      <footer>
+        <div class="wrapper">
+          <h:graphicImage value="resources/img/glp-white-logo.png"/>
+
+          <nav id="footerNav">
+            <h:link value="Home" outcome="index"/>
+            <h:link value="Sing In" outcome="login"/>
+          </nav>
+        </div>
           
           <p class="copyright">&copy; Copyright - GreenLine Passenger. All rights reserved</p>
         </footer>

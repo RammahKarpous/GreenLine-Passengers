@@ -5,10 +5,6 @@
 body {
   margin: 0;
   min-height: 100vh;
-  
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-between;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -39,7 +35,7 @@ a {
   
   &:hover {
     background: $dark-blue;
-    color: white;
+    color: white !important;
   }
 }
 
@@ -58,12 +54,14 @@ a {
   a {
     display: inline-block;
     padding: 20px;
+    color: $dark-blue;
   }
 }
 
 // ========================== SIGN IN FORM STYLING
 .form-wrapper {
   width: 980px;
+  margin: 70px auto 200px;
   
   h1 {
     margin: 0px 0 20px;

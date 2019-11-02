@@ -14,19 +14,21 @@ and open the template in the editor.
             <ui:define name="content">
                 <h1>Sign in</h1>
                 <h:form>
-                <p>
+                  <div class="inputField">
                     <h:outputText value ="Username: "/>
                     <h:inputText id="username" value=""/>
                     <h:message for="username"/>
-                </p>
-                <p>
+                  </div>
+                  
+                  <div class="inputField">
                     <h:outputText value ="Password: "/>
                     <h:inputSecret id="password" value=""/>
                     <h:message for="password"/>
-                </p>
-                <p>
+                  </div>
+                  
+                  <div class="inputField">
                     <h:commandButton action="#" value="Login"/> Don't have an account? <h:link value="Register here" outcome="#"/>
-                </p>
+                  </div>
                     </h:form>
             </ui:define>
         </ui:composition>

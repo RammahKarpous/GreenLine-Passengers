@@ -33,6 +33,14 @@ a {
   margin: auto;
 }
 
+.button, .form-wrapper .inputField:last-child input {
+  border: 2px solid;
+  border-color: #35495E;
+  color: #35495E;
+  padding: 12px 20px !important;
+  border-radius: 5px;
+}
+
 #mainNav .wrapper {
   display: flex;
   flex-flow: row nowrap;
@@ -45,6 +53,29 @@ a {
 #mainNav a {
   display: inline-block;
   padding: 20px;
+}
+
+.form-wrapper {
+  width: 980px;
+}
+.form-wrapper h1 {
+  margin: 0px 0 20px;
+  padding: 10px 0;
+  border-bottom: 3px solid rgba(53, 73, 94, 0.2);
+}
+.form-wrapper .inputField {
+  margin-bottom: 10px;
+}
+.form-wrapper .inputField input {
+  padding: 7px;
+  width: 100%;
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 2px solid #35495E;
+}
+.form-wrapper .inputField:last-child input {
+  border-color: white;
+  color: white;
 }
 
 footer {

@@ -74,17 +74,33 @@ a {
   border-bottom: 3px solid rgba(53, 73, 94, 0.2);
 }
 .form-wrapper .inputField {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
-.form-wrapper .inputField input {
+.form-wrapper .inputField input, .form-wrapper .inputField select {
   padding: 7px;
-  width: 100%;
+  width: calc(100% - 18px);
   margin-top: 5px;
   border-radius: 5px;
   border: 2px solid #35495E;
+  outline-style: none;
+}
+.form-wrapper .inputField select {
+  width: 100%;
 }
 .form-wrapper .inputField .button {
   margin-right: 10px;
+}
+
+.login {
+  margin-top: 0px;
+  width: 700px;
+}
+.login .logoImg {
+  text-align: center;
+}
+.login img {
+  width: 200px;
+  margin: 50px auto;
 }
 
 footer {

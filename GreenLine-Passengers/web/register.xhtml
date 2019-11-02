@@ -13,69 +13,82 @@ and open the template in the editor.
     <h:body>
         <ui:composition template="template.xhtml">
             <ui:define name="content">
+              <div class="wrapper form-wrapper register">
                 <h1>Register</h1>
                 <h:form>
-                    <p>
-                        <h:outputText value ="FirstName: "/>
-                        <h:inputText id="firstName" value=""/>
-                        <h:message for="firstName"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="MiddleName: "/>
-                        <h:inputText id="middleName" value=""/>
-                        <h:message for="middleName"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="LastName: "/>
-                        <h:inputText id="lastName" value=""/>
-                        <h:message for="lastName"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="Email: "/>
-                        <h:inputText id="email" value="" />
-                        <h:message for="email"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="Password: "/>
-                        <h:inputSecret id="password" value=""/>
-                        <h:message for="password"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="ComfirmPassword: "/>
-                        <h:inputSecret id="confirmPassword" value=""/>
-                        <h:message for="confirmPassword"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="Country: "/>
-                        <h:selectOneListbox id="county" value="">
-                            <f:selectItem itemValue="" itemLabel=""/>
-                        </h:selectOneListbox>
-                        <h:message for="county"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="City: "/>
-                        <h:inputText id="city" value="" />
-                        <h:message for="city"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="Telephone number: "/>
-                        <h:inputText id="telephoneNumber" value="" />
-                        <h:message for="telephoneNumber"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="Passport number: "/>
-                        <h:inputText id="passportNumber" value="" />
-                        <h:message for="passportNumber"/>
-                    </p>
-                    <p>
-                        <h:outputText value ="Emergency contact number: "/>
-                        <h:inputText id="emergencyContactNumber" value="" />
-                        <h:message for="emergencyContactNumber"/>
-                    </p>
-                    <p>
-                        <h:commandButton action="#" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
-                    </p>
+                  <div class="inputField">
+                    <label for="firstName"><h:outputText value ="First name: "/></label>
+                    <h:inputText id="firstName" value=""/>
+                    <h:message for="firstName"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="middleName"><h:outputText value ="Middle name"/></label>
+                    <h:inputText id="middleName" value=""/>
+                    <h:message for="middleName"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="lastName"><h:outputText value ="Last name"/></label>
+                    <h:inputText id="lastName" value=""/>
+                    <h:message for="lastName"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="email"><h:outputText value ="Email"/></label>
+                    <h:inputText id="email" value="" />
+                    <h:message for="email"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="password"><h:outputText value ="Password"/></label>
+                    <h:inputSecret id="password" value=""/>
+                    <h:message for="password"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="confirmPassword"><h:outputText value ="Comfirm password"/></label>
+                    <h:inputSecret id="confirmPassword" value=""/>
+                    <h:message for="confirmPassword"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="county"><h:outputText value ="Country"/></label>
+                    <h:selectOneListbox id="county" value="">
+                      <f:selectItem itemValue="" itemLabel=""/>
+                    </h:selectOneListbox>
+                    <h:message for="county"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="city"><h:outputText value ="City"/></label>
+                    <h:inputText id="city" value="" />
+                    <h:message for="city"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="telephoneNumber"><h:outputText value ="Telephone number"/></label>
+                    <h:inputText id="telephoneNumber" value="" />
+                    <h:message for="telephoneNumber"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="passportNumber"><h:outputText value ="Passport number"/></label>
+                    <h:inputText id="passportNumber" value="" />
+                    <h:message for="passportNumber"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="emergencyContactNumber"><h:outputText value ="Emergency contact number"/></label>
+                    <h:inputText id="emergencyContactNumber" value="" />
+                    <h:message for="emergencyContactNumber"/>
+                  </div>
+
+                  <div class="inputField">
+                    <h:commandButton action="#" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+                  </div>
                 </h:form>
+              </div>
             </ui:define>
         </ui:composition>
     </h:body>

@@ -70,20 +70,38 @@ a {
   }
   
   .inputField {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     
-    input {
+    input, select {
       padding: 7px;
-      width: 100%;
+      width: calc(100% - 18px);
       margin-top: 5px;
       border-radius: 5px;
       border: 2px solid #35495E;
+      outline-style: none;
+    }
+    
+    select {
+      width: 100%;
     }
     
     .button {
       @extend .button;
       margin-right: 10px;
     }
+  }
+}
+
+.login {
+  margin-top: 0px;
+  width: 700px;
+
+  .logoImg {
+    text-align: center;
+  }
+  img {
+    width: 200px;
+    margin: 50px auto;
   }
 }
 

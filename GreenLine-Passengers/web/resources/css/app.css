@@ -39,6 +39,8 @@ a {
   color: #35495E;
   padding: 12px 20px !important;
   border-radius: 5px;
+  background: transparent;
+  width: initial !important;
 }
 
 #mainNav .wrapper {

@@ -28,6 +28,8 @@ a {
   @include button($dark-blue, $dark-blue);
   padding: 12px 20px !important;
   border-radius: 5px;
+  background: transparent;
+  width: initial !important;
 }
 
 // ========================== NAVIGATION STYLING

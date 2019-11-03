@@ -3,3 +3,5 @@
 /GreenLine-Passengers/nbproject/private/
 /GreenLine-Passengers/build/
 /GreenLine-Passengers/dist/
+*.lck
+*.log

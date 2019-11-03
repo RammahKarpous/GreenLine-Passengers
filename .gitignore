@@ -7,3 +7,8 @@
 GreenLine-Passengers/jdbc/Database/log/log1.dat
 GreenLine-Passengers/jdbc/derby.log
 GreenLine-Passengers/jdbc/derby.log
+GreenLine-Passengers/jdbc/Database/db.lck
+GreenLine-Passengers/jdbc/Database/log/log.ctrl
+GreenLine-Passengers/jdbc/Database/log/log1.dat
+GreenLine-Passengers/jdbc/Database/log/logmirror.ctrl
+GreenLine-Passengers/jdbc/derby.log

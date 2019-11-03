@@ -3,3 +3,7 @@
 /GreenLine-Passengers/nbproject/private/
 /GreenLine-Passengers/build/
 /GreenLine-Passengers/dist/
+*.lck
+GreenLine-Passengers/jdbc/Database/log/log1.dat
+GreenLine-Passengers/jdbc/derby.log
+GreenLine-Passengers/jdbc/derby.log

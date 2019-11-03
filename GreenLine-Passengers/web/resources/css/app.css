@@ -1,23 +1,132 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 01-Nov-2019, 23:52:12
-    Author     : Rammah
-*/
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 01-Nov-2019, 23:56:15
-    Author     : Rammah
-*/
+@font-face {
+  font-family: "monserrat-bold";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/monserrat-bold.eot");
+  src: local("montserrat-bold"), local("rift-Regular"), url("../fonts/monserrat-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/monserrat-bold.woff2") format("woff2"), url("../fonts/monserrat-bold.woff") format("woff"), url("../fonts/monserrat-bold.ttf") format("truetype"), url("../fonts/monserrat-bold.svg#monserrat-bold") format("svg");
+}
+@font-face {
+  font-family: "The-Font";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../fonts/monserrat.eot");
+  src: local("monserrat"), local("rift-Regular"), url("../fonts/monserrat.eot?#iefix") format("embedded-opentype"), url("../fonts/monserrat.woff2") format("woff2"), url("../fonts/monserrat.woff") format("woff"), url("../fonts/monserrat.ttf") format("truetype"), url("../fonts/monserrat.svg#monserrat") format("svg");
+}
 body {
-  background: #347474;
+  margin: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "monserrat-bold";
+}
+
+a, p {
+  font-family: "monserrat";
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 1300px;
+  margin: auto;
+}
+
+.button, .form-wrapper .inputField .button {
+  border: 2px solid;
+  border-color: #35495E;
+  color: #35495E;
+  padding: 12px 20px !important;
+  border-radius: 5px;
+  background: transparent;
+  width: initial !important;
+  cursor: pointer;
+}
+.button:hover, .form-wrapper .inputField .button:hover {
+  background: #35495E;
+  color: white !important;
+}
+
+#mainNav .wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+#mainNav img {
+  width: 102px;
+}
+#mainNav a {
+  display: inline-block;
+  padding: 20px;
+  color: #35495E;
+}
+
+.form-wrapper {
+  width: 980px;
+  margin: 70px auto 200px;
+}
+.form-wrapper h1 {
+  margin: 0px 0 20px;
+  padding: 10px 0;
+  border-bottom: 3px solid rgba(53, 73, 94, 0.2);
+}
+.form-wrapper .inputField {
+  margin-bottom: 15px;
+}
+.form-wrapper .inputField input, .form-wrapper .inputField select {
+  padding: 7px;
+  width: calc(100% - 18px);
+  margin-top: 5px;
+  border-radius: 5px;
+  border: 2px solid #35495E;
+  outline-style: none;
+}
+.form-wrapper .inputField select {
+  width: 100%;
+}
+.form-wrapper .inputField .button {
+  margin-right: 10px;
+}
+
+.login {
+  margin-top: 0px;
+  width: 700px;
+}
+.login .logoImg {
+  text-align: center;
+}
+.login img {
+  width: 200px;
+  margin: 50px auto;
+}
+
+footer {
+  background: #35495E;
+}
+footer .wrapper {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  padding: 30px 20px;
+  align-items: center;
+}
+footer .wrapper img {
+  width: 140px;
+}
+footer .wrapper #footerNav a {
+  display: inline-block;
+  padding: 20px;
+  color: white;
+}
+footer .copyright {
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  margin: 0;
+  background: #283747;
 }
 
 /*# sourceMappingURL=app.css.map */

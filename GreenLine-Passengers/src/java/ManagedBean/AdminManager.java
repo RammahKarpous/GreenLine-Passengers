@@ -1,26 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ManagedBean;
 
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.util.ArrayList;
 
-/**
- *
- * @author Nurul Amin
- */
 @Named(value = "adminManager")
 @SessionScoped
-public class AdminManager implements Serializable {
+public class AdminManager implements Serializable 
+{
+    ArrayList<dtos.AdminDTO> admins = new ArrayList<>();
 
-    /**
-     * Creates a new instance of AdminManager
-     */
-    public AdminManager() {
+    public AdminManager() 
+    {
     }
+    
     
 }

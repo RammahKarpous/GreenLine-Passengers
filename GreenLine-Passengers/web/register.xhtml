@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:body>
+        <ui:composition template="template.xhtml">
+            <ui:define name="content">
+              <div class="wrapper form-wrapper register">
+                <h1>Register</h1>
+                <h:form>
+                  <div class="inputField">
+                    <label for="firstName"><h:outputText value ="First name: "/></label>
+                    <h:inputText id="firstName" value=""/>
+                    <h:message for="firstName"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="middleName"><h:outputText value ="Middle name"/></label>
+                    <h:inputText id="middleName" value=""/>
+                    <h:message for="middleName"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="lastName"><h:outputText value ="Last name"/></label>
+                    <h:inputText id="lastName" value=""/>
+                    <h:message for="lastName"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="email"><h:outputText value ="Email"/></label>
+                    <h:inputText id="email" value="" />
+                    <h:message for="email"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="password"><h:outputText value ="Password"/></label>
+                    <h:inputSecret id="password" value=""/>
+                    <h:message for="password"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="confirmPassword"><h:outputText value ="Comfirm password"/></label>
+                    <h:inputSecret id="confirmPassword" value=""/>
+                    <h:message for="confirmPassword"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="county"><h:outputText value ="Country"/></label>
+                    <h:selectOneListbox id="county" value="">
+                      <f:selectItem itemValue="" itemLabel=""/>
+                    </h:selectOneListbox>
+                    <h:message for="county"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="city"><h:outputText value ="City"/></label>
+                    <h:inputText id="city" value="" />
+                    <h:message for="city"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="telephoneNumber"><h:outputText value ="Telephone number"/></label>
+                    <h:inputText id="telephoneNumber" value="" />
+                    <h:message for="telephoneNumber"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="passportNumber"><h:outputText value ="Passport number"/></label>
+                    <h:inputText id="passportNumber" value="" />
+                    <h:message for="passportNumber"/>
+                  </div>
+
+                  <div class="inputField">
+                    <label for="emergencyContactNumber"><h:outputText value ="Emergency contact number"/></label>
+                    <h:inputText id="emergencyContactNumber" value="" />
+                    <h:message for="emergencyContactNumber"/>
+                  </div>
+
+                  <div class="inputField">
+                    <h:commandButton action="#" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+                  </div>
+                </h:form>
+              </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

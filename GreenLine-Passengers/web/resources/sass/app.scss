@@ -1,16 +1,140 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/*
-    Created on : 01-Nov-2019, 23:52:12
-    Author     : Rammah
-*/
-
 @import 'variables';
+@import 'fonts';
+@import 'mixins';
 
 body {
-  background: $dark-green;
+  margin: 0;
+  min-height: 100vh;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'monserrat-bold';
+}
+
+a, p {
+  font-family: 'monserrat';
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  width: 1300px;
+  margin: auto;
+}
+
+.button {
+  border: 2px solid;
+  @include button($dark-blue, $dark-blue);
+  padding: 12px 20px !important;
+  border-radius: 5px;
+  background: transparent;
+  width: initial !important;
+  cursor: pointer;
+  
+  &:hover {
+    background: $dark-blue;
+    color: white !important;
+  }
+}
+
+// ========================== NAVIGATION STYLING
+#mainNav {
+  .wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  img {
+    width: 102px;
+  }
+  
+  a {
+    display: inline-block;
+    padding: 20px;
+    color: $dark-blue;
+  }
+}
+
+// ========================== SIGN IN FORM STYLING
+.form-wrapper {
+  width: 980px;
+  margin: 70px auto 200px;
+  
+  h1 {
+    margin: 0px 0 20px;
+    padding: 10px 0;
+    border-bottom: 3px solid transparentize($dark-blue, .8);
+  }
+  
+  .inputField {
+    margin-bottom: 15px;
+    
+    input, select {
+      padding: 7px;
+      width: calc(100% - 18px);
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 2px solid #35495E;
+      outline-style: none;
+    }
+    
+    select {
+      width: 100%;
+    }
+    
+    .button {
+      @extend .button;
+      margin-right: 10px;
+    }
+  }
+}
+
+.login {
+  margin-top: 0px;
+  width: 700px;
+
+  .logoImg {
+    text-align: center;
+  }
+  img {
+    width: 200px;
+    margin: 50px auto;
+  }
+}
+
+// ========================== FOOTER STYLING
+footer {
+  background: $dark-blue;
+  
+  .wrapper {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 30px 20px;
+    align-items: center;
+    
+    img {
+      width: 140px;
+    }
+    
+    #footerNav {
+      
+      a {
+        display: inline-block;
+        padding: 20px;
+        color: white;
+      }
+    }
+  }
+  
+  .copyright {
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+    background: $darker-blue;
+  }
+}

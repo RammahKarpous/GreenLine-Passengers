@@ -14,25 +14,25 @@ and open the template in the editor.
             <ui:define name="content">
               <div  class="wrapper form-wrapper login">
                 <div class="logoImg">
-                  <h:graphicImage value="resources/img/logo/glp-icon.png" alt="GreenLine Passenger Icon"/>
+                  <h:graphicImage value="resources/img/glp-icon.png" alt="GreenLine Passenger Icon"/>
                 </div>
                 
                 <h1>Sign in</h1>
                 <h:form>
                   <div class="inputField">
                     <label for="username"><h:outputText value ="Username: "/></label>
-                    <h:inputText id="username" value=""/>
+                    <h:inputText id="username" value="#{login.user}"/>
                     <h:message for="username"/>
                   </div>
 
                   <div class="inputField">
                       <h:outputText value ="Password: "/>
-                      <h:inputSecret id="password" value=""/>
+                      <h:inputSecret id="password" value="#{login.pwd}"/>
                       <h:message for="password"/>
                   </div>
 
                   <div class="inputField">
-                    <h:commandButton action="#" value="Login" class="button"/> Don't have an account? <h:link value="Register here" outcome="register"/>
+                    <h:commandButton action="#{login.validateUsernamePassword}" value="Login" class="button"/> Don't have an account? <h:link value="Register here" outcome="register"/>
                   </div>
                 </h:form>
               </div>

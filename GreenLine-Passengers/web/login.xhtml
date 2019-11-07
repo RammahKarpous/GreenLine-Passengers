@@ -14,7 +14,7 @@ and open the template in the editor.
             <ui:define name="content">
               <div  class="wrapper form-wrapper login">
                 <div class="logoImg">
-                  <h:graphicImage value="resources/img/glp-icon.png" alt="GreenLine Passenger Icon"/>
+                  <h:graphicImage value="resources/img/logo/glp-icon.png" alt="GreenLine Passenger Icon"/>
                 </div>
                 
                 <h1>Sign in</h1>
@@ -32,7 +32,7 @@ and open the template in the editor.
                   </div>
 
                   <div class="inputField">
-                    <h:commandButton action="#{login.validateUsernamePassword}" value="Login" class="button"/> Don't have an account? <h:link value="Register here" outcome="register"/>
+                      <h:commandButton action="#{login.validateUsernamePassword()}" value="Login" class="button"/> Don't have an account? <h:link value="Register here" outcome="register"/>
                   </div>
                 </h:form>
               </div>

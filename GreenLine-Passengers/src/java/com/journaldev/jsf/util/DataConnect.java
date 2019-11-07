@@ -7,9 +7,9 @@ public class DataConnect {
 
 	public static Connection getConnection() {
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("org.apache.derby.jdbc.ClientDriver");
 			Connection con = DriverManager.getConnection(
-					"jdbc:mysql://localhost:3306/cardb", "pankaj", "pankaj123");
+					"jdbc:derby://localhost:1527/Database", "admin1", "admin1");
 			return con;
 		} catch (Exception ex) {
 			System.out.println("Database.getConnection() Error -->"

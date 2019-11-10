@@ -2,24 +2,24 @@
 	font-family: 'monserrat-bold';
 	font-style: normal;
 	font-weight: 400;
-	src: url('../fonts/monserrat-bold.eot');
+	src: url('fonts/monserrat-bold.eot');
 	src: local('montserrat-bold'), local('rift-Regular'),
-	  url('../fonts/monserrat-bold.eot?#iefix') format('embedded-opentype'),
-	  url('../fonts/monserrat-bold.woff2') format('woff2'),
-    url('../fonts/monserrat-bold.woff') format('woff'),
-    url('../fonts/monserrat-bold.ttf') format('truetype'),
-	  url('../fonts/monserrat-bold.svg#monserrat-bold') format('svg');
+	  url('fonts/monserrat-bold.eot?#iefix') format('embedded-opentype'),
+	  url('fonts/monserrat-bold.woff2') format('woff2'),
+    url('fonts/monserrat-bold.woff') format('woff'),
+    url('fonts/monserrat-bold.ttf') format('truetype'),
+	  url('fonts/monserrat-bold.svg#monserrat-bold') format('svg');
 }
 
 @font-face {
-	font-family: 'The-Font';
+	font-family: 'monserrat';
 	font-style: normal;
 	font-weight: 400;
-	src: url('../fonts/monserrat.eot');
+	src: url('fonts/monserrat.eot');
 	src: local('monserrat'), local('rift-Regular'),
-	  url('../fonts/monserrat.eot?#iefix') format('embedded-opentype'),
-	  url('../fonts/monserrat.woff2') format('woff2'),
-    url('../fonts/monserrat.woff') format('woff'),
-    url('../fonts/monserrat.ttf') format('truetype'),
-	  url('../fonts/monserrat.svg#monserrat') format('svg');
+	  url('fonts/monserrat.eot?#iefix') format('embedded-opentype'),
+	  url('fonts/monserrat.woff2') format('woff2'),
+    url('fonts/monserrat.woff') format('woff'),
+    url('fonts/monserrat.ttf') format('truetype'),
+	  url('fonts/monserrat.svg#monserrat') format('svg');
 }

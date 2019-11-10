@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+  <head>
+    <title>TODO supply a title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <nav id="mainNav" >
+      <div class="wrapper">
+        <h:graphicImage value="resources/img/logo/glp-logo.png" alt="GreenLine Passenger Logo"/>
+
+        <div class="links">
+          <h:link value="Home" outcome="index"/>
+          <h:link value="Settings" outcome="settings"/>
+          <h:commandLink action="#{login.logout}" class="button" value="Logout"></h:commandLink>
+          <p>Welcome #{login.user}</p>
+        </div>
+      </div>
+    </nav>
+    
+    <div id="content" class="content">
+      <ui:insert name="content"></ui:insert>
+    </div>
+    
+    <footer>
+      <div class="wrapper">
+        <h:graphicImage value="resources/img/logo/glp-white-logo.png" alt="GreenLine Passenger White Logo"/>
+
+        <nav id="footerNav">
+          <h:link value="Home" outcome="index"/>
+          <h:link value="Register" outcome="register"/>
+          <h:link value="Sing In" outcome="login"/>
+        </nav>
+      </div>
+
+      <p class="copyright">&copy; Copyright - GreenLine Passenger. All rights reserved</p>
+    </footer>
+  </body>
+</html>

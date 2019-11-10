@@ -9,25 +9,26 @@ and open the template in the editor.
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
-  <head>
+  <h:head>
     <title>TODO supply a title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  </head>
+    
+    <h:outputStylesheet library="css" name="app.css" />
+  </h:head>
   <body>
     <nav id="mainNav" >
       <div class="wrapper">
         <h:graphicImage value="resources/img/logo/glp-logo.png" alt="GreenLine Passenger Logo"/>
 
-        <div class="links">
+        <h:form class="links">
           <h:link value="Home" outcome="index"/>
           <h:link value="Settings" outcome="settings"/>
-          <h:commandLink action="#{login.logout}" class="button" value="Logout"></h:commandLink>
           <p>Welcome #{login.user}</p>
-        </div>
+        </h:form>
       </div>
     </nav>
     
-    <div id="content" class="content">
+    <div id="content" class="content wrapper">
       <ui:insert name="content"></ui:insert>
     </div>
     
@@ -42,7 +43,7 @@ and open the template in the editor.
         </nav>
       </div>
 
-      <p class="copyright">&copy; Copyright - GreenLine Passenger. All rights reserved</p>
+      <p class="copyright">Copyright - GreenLine Passenger. All rights reserved</p>
     </footer>
   </body>
 </html>

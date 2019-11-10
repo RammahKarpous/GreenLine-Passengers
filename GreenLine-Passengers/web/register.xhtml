@@ -18,7 +18,7 @@ and open the template in the editor.
                 <h:form>
                   <div class="inputField">
                     <label for="firstName"><h:outputText value ="First name: "/></label>
-                    <h:inputText id="firstName" value=""/>
+                    <h:inputText id="firstName" value="#{ManagedBeans.CustomerManager.customer.firstName}"/>
                     <h:message for="firstName"/>
                   </div>
 

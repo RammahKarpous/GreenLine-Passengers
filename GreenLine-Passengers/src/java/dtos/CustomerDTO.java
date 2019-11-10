@@ -15,19 +15,6 @@ public class CustomerDTO
     private String gender;
     private String country;
 
-    public CustomerDTO(int personID, int userID, String firstName, String surname, Date dob, String passportNumber, int contactNumber, int emergencyContactNumber, String gender, String country) {
-        this.personID = personID;
-        this.userID = userID;
-        this.firstName = firstName;
-        this.surname = surname;
-        this.dob = dob;
-        this.passportNumber = passportNumber;
-        this.contactNumber = contactNumber;
-        this.emergencyContactNumber = emergencyContactNumber;
-        this.gender = gender;
-        this.country = country;
-    }
-
     public int getPersonID() {
         return personID;
     }
@@ -68,11 +55,45 @@ public class CustomerDTO
         return country;
     }
 
-    @Override
-    public String toString() {
-        return "Customer Details{" + "personID=" + personID + ", userID=" + userID + ", firstName=" + firstName + ", surname=" + surname + ", dob=" + dob + ", passportNumber=" + passportNumber + ", contactNumber=" + contactNumber + ", emergencyContactNumber=" + emergencyContactNumber + ", gender=" + gender + ", country=" + country + '}';
+    public void setPersonID(int personID) {
+        this.personID = personID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setDob(Date dob) {
+        this.dob = dob;
+    }
+
+    public void setPassportNumber(String passportNumber) {
+        this.passportNumber = passportNumber;
+    }
+
+    public void setContactNumber(int contactNumber) {
+        this.contactNumber = contactNumber;
+    }
+
+    public void setEmergencyContactNumber(int emergencyContactNumber) {
+        this.emergencyContactNumber = emergencyContactNumber;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
     
-    
-    
+       
 }

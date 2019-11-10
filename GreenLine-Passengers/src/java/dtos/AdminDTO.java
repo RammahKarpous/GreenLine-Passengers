@@ -6,13 +6,6 @@ public class AdminDTO
     private String username;
     private String password;
 
-    public AdminDTO(int userID, String username, String password) 
-    {
-        this.userID = userID;
-        this.username = username;
-        this.password = password;
-    }
-
     public int getUserID() 
     {
         return userID;
@@ -27,12 +20,19 @@ public class AdminDTO
     {
         return password;
     }
-    
-    @Override
-    public String toString()
-    {
-        String str = "user ID: " + userID + "username: " + username;
-        return str;
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+    
+    
     
 }

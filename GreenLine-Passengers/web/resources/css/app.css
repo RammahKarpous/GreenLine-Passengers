@@ -51,6 +51,17 @@ a {
   color: white !important;
 }
 
+.altLink {
+  color: #35495E;
+}
+.altLink:hover {
+  color: #3e566e;
+}
+
+.button, .form-wrapper .inputField .button, .altLink, a {
+  transition: 0.2s;
+}
+
 #mainNav .wrapper {
   display: flex;
   flex-flow: row nowrap;
@@ -103,6 +114,68 @@ a {
 .login img {
   width: 200px;
   margin: 50px auto;
+}
+
+.latest-flight {
+  width: 970px;
+  margin: 50px auto;
+}
+.latest-flight .flight-wrapper {
+  background: #F5F5F5;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.latest-flight .flight-wrapper .departure-arrival {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+.latest-flight .flight-wrapper .departure-arrival .info {
+  width: 370px;
+  padding: 5px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.latest-flight .flight-wrapper .departure-arrival .info .flight-time, .latest-flight .flight-wrapper .departure-arrival .info .duration {
+  display: flex;
+  align-items: center;
+}
+.latest-flight .flight-wrapper .departure-arrival .info .flight-time {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+.latest-flight .flight-wrapper .departure-arrival .info .flight-location {
+  font-size: 0.8em;
+}
+.latest-flight .flight-wrapper .price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+.latest-flight .actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.latest-flight .actions div .button {
+  margin: 0px 4px;
+}
+.latest-flight .actions div .button:nth-child(1) {
+  margin-left: 0px;
+}
+.latest-flight .actions div .button:nth-child(2) {
+  margin-left: 30px;
+}
+.latest-flight .actions .altLink {
+  font-size: 0.8em;
 }
 
 footer {

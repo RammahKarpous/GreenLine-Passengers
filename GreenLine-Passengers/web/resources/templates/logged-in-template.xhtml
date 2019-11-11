@@ -23,7 +23,7 @@ and open the template in the editor.
         <h:form class="links">
           <h:link value="Home" outcome="index"/>
           <h:link value="Settings" outcome="settings"/>
-          <h:outputText value="Welcome #{login.user}" />
+          <h:link value="Welcome #{login.user}" outcome="admin" />
         </h:form>
       </div>
     </nav>
@@ -38,8 +38,8 @@ and open the template in the editor.
 
         <nav id="footerNav">
           <h:link value="Home" outcome="index"/>
-          <h:link value="Register" outcome="register"/>
-          <h:link value="Sing In" outcome="login"/>
+          <h:link value="Settings" outcome="settings"/>
+          <h:link value="Dashboard" outcome="admin"/>
         </nav>
       </div>
 

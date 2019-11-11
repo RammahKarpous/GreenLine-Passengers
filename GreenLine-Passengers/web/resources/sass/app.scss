@@ -25,6 +25,9 @@ a {
   width: 1300px;
   margin: auto;
 }
+input {
+  outline-style: none;
+}
 
 .button {
   border: 2px solid;
@@ -120,8 +123,10 @@ a {
 }
 
 // ========================== FLIGHT INFO STYLING
+$contentWidth: 970px;
+
 .latest-flight {
-  width: 970px;
+  width: $contentWidth;
   margin: 50px auto;
   
   .flight-wrapper {
@@ -149,6 +154,10 @@ a {
         .flight-time, .duration {
           display: flex;
           align-items: center;
+        }
+        
+        .duration {
+          font-size: .8em;
         }
         
         .flight-time {
@@ -187,6 +196,47 @@ a {
     
     .altLink {
       font-size: .8em;
+    }
+  }
+}
+// ========================== USERS PART STYLING
+.users {
+  width: $contentWidth;
+  margin: 100px auto 200px;
+  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  
+/*  h3 {
+    display: block;
+    width: 100%;
+  }*/
+  
+  .user-actions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 350px;
+    
+    .user-info {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .numbers {
+      font-size: 1.3em;
+      font-weight: 900;
+      color: $dark-blue;
+    }
+    
+    .words {
+      margin-bottom: 15px;
+      font-size: .9em;
+      opacity: .8;
     }
   }
 }

@@ -82,8 +82,24 @@
         </div>
       </h:form>
       
-      <h:form class="more-actions">
+      <h:form class="users">
+<!--        <h3>Users information</h3>-->
         
+        <div class="user-actions">
+          <div class="user-info">
+            <h:outputText class="numbers" value="343,298" />
+            <h:outputText class="words" value="Bookings made" />
+            <h:commandButton action="#{login.logout}" class="button" value="View bookings"></h:commandButton>
+          </div>
+          
+          <div class="user-info">
+            <h:outputText class="numbers" value="34,082,374" />
+            <h:outputText class="words" value="Users registered" />
+            <h:commandButton action="#{login.logout}" class="button" value="View customers"></h:commandButton>
+          </div>
+        </div>
+        
+        <h:commandButton action="#{login.logout}" class="button" value="Log out"></h:commandButton>
       </h:form>
     </ui:define>
   </ui:composition>

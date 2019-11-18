@@ -13,8 +13,9 @@ h1, h2, h3, h4, h5, h6 {
   color: $dark-blue;
 }
 
-a, p {
+a, p, input {
   font-family: 'monserrat';
+  font-size: 14px;
 }
 
 a {
@@ -24,6 +25,9 @@ a {
 .wrapper {
   width: 1300px;
   margin: auto;
+}
+input {
+  outline-style: none;
 }
 
 .button {
@@ -39,6 +43,18 @@ a {
     background: $dark-blue;
     color: white !important;
   }
+}
+
+.altLink {
+  color: $dark-blue;
+  
+  &:hover {
+    color: lighten($dark-blue, 5%);
+  }
+}
+
+.button, .altLink, a {
+  transition: .2s;
 }
 
 // ========================== NAVIGATION STYLING
@@ -104,6 +120,125 @@ a {
   img {
     width: 200px;
     margin: 50px auto;
+  }
+}
+
+// ========================== FLIGHT INFO STYLING
+$contentWidth: 970px;
+
+.latest-flight {
+  width: $contentWidth;
+  margin: 50px auto;
+  
+  .flight-wrapper {
+    background: $light-gray;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    
+    .departure-arrival {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: space-between;
+      
+      .info {
+        width: 370px;
+        padding: 5px 0;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        
+        .flight-time, .duration {
+          display: flex;
+          align-items: center;
+        }
+        
+        .duration {
+          font-size: .8em;
+        }
+        
+        .flight-time {
+          display: block;
+          font-size: 1.2em;
+          font-weight: 900;
+        }
+        
+        .flight-location {
+          font-size: 0.8em;
+        }
+      }
+    }
+    
+    .price {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      font-size: 2em;
+    }
+  }
+  
+  .actions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    
+    div .button{
+     margin: 0px 4px;
+      
+      &:nth-child(1){ margin-left: 0px; }
+      &:nth-child(2) { margin-left: 30px; }
+    }
+    
+    .altLink {
+      font-size: .8em;
+    }
+  }
+}
+// ========================== USERS PART STYLING
+.users {
+  width: $contentWidth;
+  margin: 100px auto 200px;
+  
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  
+/*  h3 {
+    display: block;
+    width: 100%;
+  }*/
+  
+  .user-actions {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    width: 350px;
+    
+    .user-info {
+      display: flex;
+      flex-flow: column wrap;
+      justify-content: center;
+      text-align: center;
+    }
+    
+    .numbers {
+      font-size: 1.3em;
+      font-weight: 900;
+      color: $dark-blue;
+    }
+    
+    .words {
+      margin-bottom: 15px;
+      font-size: .9em;
+      opacity: .8;
+    }
   }
 }
 

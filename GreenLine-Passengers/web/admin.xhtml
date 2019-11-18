@@ -10,10 +10,96 @@
 <h:body>
 	
   <ui:composition template="resources/templates/logged-in-template.xhtml">
+    <ui:define name="title">Dashboard</ui:define>
     <ui:define name="content">
+      <h:form class="latest-flight">
+        <h1>Latest flight</h1>
+        
+        <div class="flight-wrapper">
+          
+          <!-- fetch images -->
+          <div class="images">
+            <h:graphicImage value="" />
+            <h:graphicImage value="" />
+          </div>
+          
+          <!-- fetch departure & arrival time and location -->
+          <div class="departure-arrival">
+            <div class="info">
+              
+              <!-- departure time and location -->
+              <div class="flight">
+                <h:outputText class="flight-time" value="06:00" />
+                <h:outputText class="flight-location" value="BHX" />
+              </div>
+              
+              <!-- flight duration -->
+              <div class="duration">
+                <h:outputText value="6h 30m" />
+              </div>
+              
+              <!-- return flight time and location -->
+              <div class="flight">
+                <h:outputText class="flight-time" value="14:30" />
+                <h:outputText class="flight-location" value="BCN" />
+              </div>
+            </div>
+            
+            <div class="info">
+              
+              <!-- departure time and location -->
+              <div class="flight">
+                <h:outputText class="flight-time" value="06:00" />
+                <h:outputText class="flight-location" value="BHX" />
+              </div>
+              
+              <!-- flight duration -->
+              <div class="duration">
+                <h:outputText value="6h 30m" />
+              </div>
+              
+              <!-- return flight time and location -->
+              <div class="flight">
+                <h:outputText class="flight-time" value="14:30" />
+                <h:outputText class="flight-location" value="BCN" />
+              </div>
+            </div>
+          </div>
+          
+          <div class="price">
+            <h:outputText value="£103" />
+          </div>
+        </div>
+        
+        <div class="actions">
+          <div>
+            <h:link class="button" value="Create flight" outcome="create-flight" />
+            <h:commandButton action="#{login.logout}" class="button" value="View flight details"></h:commandButton>
+            <h:commandButton action="#{login.logout}" class="button" value="Amend flight"></h:commandButton>
+            <h:commandButton action="#{login.logout}" class="button" value="Delete flight"></h:commandButton>
+          </div>
+          <h:commandLink action="#{login.logout}" class="altLink" value="View all flights"></h:commandLink>
+        </div>
+      </h:form>
       
-      <h:form>
-        <h:commandLink action="#{login.logout}" class="button" value="Logout"></h:commandLink>
+      <h:form class="users">
+<!--        <h3>Users information</h3>-->
+        
+        <div class="user-actions">
+          <div class="user-info">
+            <h:outputText class="numbers" value="343,298" />
+            <h:outputText class="words" value="Bookings made" />
+            <h:commandButton action="#{login.logout}" class="button" value="View bookings"></h:commandButton>
+          </div>
+          
+          <div class="user-info">
+            <h:outputText class="numbers" value="34,082,374" />
+            <h:outputText class="words" value="Users registered" />
+            <h:commandButton action="#{login.logout}" class="button" value="View customers"></h:commandButton>
+          </div>
+        </div>
+        
+        <h:commandButton action="#{login.logout}" class="button" value="Log out"></h:commandButton>
       </h:form>
     </ui:define>
   </ui:composition>

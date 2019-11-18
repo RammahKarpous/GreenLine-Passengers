@@ -2,15 +2,15 @@
   font-family: "monserrat-bold";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/monserrat-bold.eot");
-  src: local("montserrat-bold"), local("rift-Regular"), url("../fonts/monserrat-bold.eot?#iefix") format("embedded-opentype"), url("../fonts/monserrat-bold.woff2") format("woff2"), url("../fonts/monserrat-bold.woff") format("woff"), url("../fonts/monserrat-bold.ttf") format("truetype"), url("../fonts/monserrat-bold.svg#monserrat-bold") format("svg");
+  src: url("fonts/monserrat-bold.eot");
+  src: local("montserrat-bold"), local("rift-Regular"), url("fonts/monserrat-bold.eot?#iefix") format("embedded-opentype"), url("fonts/monserrat-bold.woff2") format("woff2"), url("fonts/monserrat-bold.woff") format("woff"), url("fonts/monserrat-bold.ttf") format("truetype"), url("fonts/monserrat-bold.svg#monserrat-bold") format("svg");
 }
 @font-face {
-  font-family: "The-Font";
+  font-family: "monserrat";
   font-style: normal;
   font-weight: 400;
-  src: url("../fonts/monserrat.eot");
-  src: local("monserrat"), local("rift-Regular"), url("../fonts/monserrat.eot?#iefix") format("embedded-opentype"), url("../fonts/monserrat.woff2") format("woff2"), url("../fonts/monserrat.woff") format("woff"), url("../fonts/monserrat.ttf") format("truetype"), url("../fonts/monserrat.svg#monserrat") format("svg");
+  src: url("fonts/monserrat.eot");
+  src: local("monserrat"), local("rift-Regular"), url("fonts/monserrat.eot?#iefix") format("embedded-opentype"), url("fonts/monserrat.woff2") format("woff2"), url("fonts/monserrat.woff") format("woff"), url("fonts/monserrat.ttf") format("truetype"), url("fonts/monserrat.svg#monserrat") format("svg");
 }
 body {
   margin: 0;
@@ -20,10 +20,12 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "monserrat-bold";
+  color: #35495E;
 }
 
-a, p {
+a, p, input {
   font-family: "monserrat";
+  font-size: 14px;
 }
 
 a {
@@ -33,6 +35,10 @@ a {
 .wrapper {
   width: 1300px;
   margin: auto;
+}
+
+input {
+  outline-style: none;
 }
 
 .button, .form-wrapper .inputField .button {
@@ -48,6 +54,17 @@ a {
 .button:hover, .form-wrapper .inputField .button:hover {
   background: #35495E;
   color: white !important;
+}
+
+.altLink {
+  color: #35495E;
+}
+.altLink:hover {
+  color: #3e566e;
+}
+
+.button, .form-wrapper .inputField .button, .altLink, a {
+  transition: 0.2s;
 }
 
 #mainNav .wrapper {
@@ -102,6 +119,106 @@ a {
 .login img {
   width: 200px;
   margin: 50px auto;
+}
+
+.latest-flight {
+  width: 970px;
+  margin: 50px auto;
+}
+.latest-flight .flight-wrapper {
+  background: #F5F5F5;
+  padding: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.latest-flight .flight-wrapper .departure-arrival {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+}
+.latest-flight .flight-wrapper .departure-arrival .info {
+  width: 370px;
+  padding: 5px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.latest-flight .flight-wrapper .departure-arrival .info .flight-time, .latest-flight .flight-wrapper .departure-arrival .info .duration {
+  display: flex;
+  align-items: center;
+}
+.latest-flight .flight-wrapper .departure-arrival .info .duration {
+  font-size: 0.8em;
+}
+.latest-flight .flight-wrapper .departure-arrival .info .flight-time {
+  display: block;
+  font-size: 1.2em;
+  font-weight: 900;
+}
+.latest-flight .flight-wrapper .departure-arrival .info .flight-location {
+  font-size: 0.8em;
+}
+.latest-flight .flight-wrapper .price {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2em;
+}
+.latest-flight .actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.latest-flight .actions div .button {
+  margin: 0px 4px;
+}
+.latest-flight .actions div .button:nth-child(1) {
+  margin-left: 0px;
+}
+.latest-flight .actions div .button:nth-child(2) {
+  margin-left: 30px;
+}
+.latest-flight .actions .altLink {
+  font-size: 0.8em;
+}
+
+.users {
+  width: 970px;
+  margin: 100px auto 200px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  /*  h3 {
+      display: block;
+      width: 100%;
+    }*/
+}
+.users .user-actions {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  width: 350px;
+}
+.users .user-actions .user-info {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  text-align: center;
+}
+.users .user-actions .numbers {
+  font-size: 1.3em;
+  font-weight: 900;
+  color: #35495E;
+}
+.users .user-actions .words {
+  margin-bottom: 15px;
+  font-size: 0.9em;
+  opacity: 0.8;
 }
 
 footer {

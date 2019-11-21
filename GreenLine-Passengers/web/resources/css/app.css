@@ -91,6 +91,16 @@ input {
   padding: 10px 0;
   border-bottom: 3px solid rgba(53, 73, 94, 0.2);
 }
+.form-wrapper .two-in-a-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.form-wrapper .three-in-a-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
 .form-wrapper .inputField {
   margin-bottom: 15px;
 }
@@ -104,6 +114,10 @@ input {
 }
 .form-wrapper .inputField select {
   width: 100%;
+}
+.form-wrapper .inputField .file {
+  border: none;
+  padding: 0;
 }
 .form-wrapper .inputField .button {
   margin-right: 10px;
@@ -119,6 +133,10 @@ input {
 .login img {
   width: 200px;
   margin: 50px auto;
+}
+
+.add-flight {
+  margin: 160px auto;
 }
 
 .latest-flight {

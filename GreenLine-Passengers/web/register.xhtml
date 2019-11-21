@@ -8,7 +8,8 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
     <h:body>
         <ui:composition template="resources/templates/template.xhtml">
@@ -17,43 +18,43 @@ and open the template in the editor.
                 <h1>Register</h1>
                 <h:form>
                   <div class="inputField">
-                    <label for="firstName"><h:outputText value ="First name: "/></label>
+                    <label for="firstName"><h:outputText value="First name: "/></label>
                     <h:inputText id="firstName" value=""/>
                     <h:message for="firstName"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="middleName"><h:outputText value ="Middle name"/></label>
+                    <label for="middleName"><h:outputText value="Middle name"/></label>
                     <h:inputText id="middleName" value=""/>
                     <h:message for="middleName"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="lastName"><h:outputText value ="Last name"/></label>
+                    <label for="lastName"><h:outputText value="Last name"/></label>
                     <h:inputText id="lastName" value=""/>
                     <h:message for="lastName"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="email"><h:outputText value ="Email"/></label>
-                    <h:inputText id="email" value="" />
+                    <label for="email"><h:outputText value="Email"/></label>
+                    <h:inputText id="email" a:type="email" />
                     <h:message for="email"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="password"><h:outputText value ="Password"/></label>
+                    <label for="password"><h:outputText value="Password"/></label>
                     <h:inputSecret id="password" value=""/>
                     <h:message for="password"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="confirmPassword"><h:outputText value ="Comfirm password"/></label>
+                    <label for="confirmPassword"><h:outputText value="Comfirm password"/></label>
                     <h:inputSecret id="confirmPassword" value=""/>
                     <h:message for="confirmPassword"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="county"><h:outputText value ="Country"/></label>
+                    <label for="county"><h:outputText value="Country"/></label>
                     <h:selectOneListbox id="county" value="">
                       <f:selectItem itemValue="" itemLabel=""/>
                     </h:selectOneListbox>
@@ -61,25 +62,25 @@ and open the template in the editor.
                   </div>
 
                   <div class="inputField">
-                    <label for="city"><h:outputText value ="City"/></label>
+                    <label for="city"><h:outputText value="City"/></label>
                     <h:inputText id="city" value="" />
                     <h:message for="city"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="telephoneNumber"><h:outputText value ="Telephone number"/></label>
+                    <label for="telephoneNumber"><h:outputText value="Telephone number"/></label>
                     <h:inputText id="telephoneNumber" value="" />
                     <h:message for="telephoneNumber"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="passportNumber"><h:outputText value ="Passport number"/></label>
+                    <label for="passportNumber"><h:outputText value="Passport number"/></label>
                     <h:inputText id="passportNumber" value="" />
                     <h:message for="passportNumber"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="emergencyContactNumber"><h:outputText value ="Emergency contact number"/></label>
+                    <label for="emergencyContactNumber"><h:outputText value="Emergency contact number"/></label>
                     <h:inputText id="emergencyContactNumber" value="" />
                     <h:message for="emergencyContactNumber"/>
                   </div>

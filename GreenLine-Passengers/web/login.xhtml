@@ -7,7 +7,8 @@ and open the template in the editor.
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
     <h:body>
         <ui:composition template="resources/templates/template.xhtml">
@@ -18,15 +19,17 @@ and open the template in the editor.
                 </div>
                 
                 <h1>Sign in</h1>
+                
+                <!-- Only the value is email, for now use username, because it's easier -->
                 <h:form>
                   <div class="inputField">
-                    <label for="username"><h:outputText value ="Username: "/></label>
+                    <label for="username"><h:outputText value ="Email"/></label>
                     <h:inputText id="username" value="#{login.user}"/>
                     <h:message for="username"/>
                   </div>
 
                   <div class="inputField">
-                      <h:outputText value ="Password: "/>
+                      <h:outputText value ="Password"/>
                       <h:inputSecret id="password" value="#{login.pwd}"/>
                       <h:message for="password"/>
                   </div>

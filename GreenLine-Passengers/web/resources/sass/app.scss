@@ -87,6 +87,18 @@ input {
     border-bottom: 3px solid transparentize($dark-blue, .8);
   }
   
+  .two-in-a-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .three-in-a-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+   
   .inputField {
     margin-bottom: 15px;
     
@@ -101,6 +113,11 @@ input {
     
     select {
       width: 100%;
+    }
+    
+    .file {
+      border: none;
+      padding: 0;
     }
     
     .button {
@@ -121,6 +138,10 @@ input {
     width: 200px;
     margin: 50px auto;
   }
+}
+
+.add-flight {
+  margin: 160px auto;
 }
 
 // ========================== FLIGHT INFO STYLING

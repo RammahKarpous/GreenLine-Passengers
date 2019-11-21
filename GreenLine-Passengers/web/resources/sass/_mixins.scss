@@ -2,3 +2,7 @@
   border-color: $border-color;
   color: $color;
 }
+
+@mixin query($size) {
+  @media only screen and (max-width: $size) { @content; }
+}

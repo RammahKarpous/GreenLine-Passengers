@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+  <h:body>
+    <ui:composition template="resources/templates/logged-in-template.xhtml">
+      <ui:define name="title">Add flights</ui:define>
+      <ui:define name="content">
+        <div class="wrapper form-wrapper add-flight">
+          <h1>Add flight</h1>
+          <h:form enctype="multipart/form-data">
+            <div class="three-in-a-row">
+              <div class="inputField">
+                <label for="flightNumber"><h:outputText value ="Flight number"/></label>
+                <h:inputText id="flightNumber" value=""/>
+                <h:message for="flightNumber"/>
+              </div>
+
+              <div class="inputField">
+                <label for="flightCompany"><h:outputText value ="Flight company"/></label>
+                <h:inputText id="flightCompany" value=""/>
+                <h:message for="flightCompany"/>
+              </div>
+
+              <div class="inputField">
+                <label for="price"><h:outputText value ="Price"/></label>
+                <h:inputText id="price" value=""/>
+                <h:message for="price"/>
+              </div>
+            </div>
+
+            <div class="two-in-a-row">
+              <!-- The company images are the logos of EasyJet, KLM, British Airways etc. -->
+              <div class="inputField">
+                <label for="companyImage"><h:outputText value ="Company image"/></label>
+                <h:inputFile id="companyImage" value="" class="file" />
+                <h:message for="companyImage"/>
+              </div>
+              
+              <div class="two-in-a-row">
+                <div class="inputField">
+                  <label for="departureTime"><h:outputText value="Departure time" /></label>
+                  <h:inputText id="departureTime" value="">  
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                  </h:inputText>
+                  <h:message for="departureTime"/>
+                </div>
+
+                <div class="inputField">
+                  <label for="arrivalTime"><h:outputText value="Arrival time" /></label>
+                  <h:inputText id="arrivalTime" value="">  
+                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                  </h:inputText>
+                  <h:message for="arrivalTime"/>
+                </div>
+              </div>
+            </div>
+
+            <div class="two-in-a-row">
+              <div class="inputField">
+                <label for="county"><h:outputText value ="Country"/></label>
+                <h:selectOneListbox id="county" value="">
+                  <f:selectItem itemValue="" itemLabel=""/>
+                </h:selectOneListbox>
+                <h:message for="county"/>
+              </div>
+
+              <div class="inputField">
+                <label for="city"><h:outputText value ="City"/></label>
+                <h:inputText id="city" value="" />
+                <h:message for="city"/>
+              </div>
+            </div>
+
+            <div class="inputField">
+              <h:commandButton action="#" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+            </div>
+          </h:form>
+        </div>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>

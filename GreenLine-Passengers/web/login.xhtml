@@ -24,18 +24,18 @@ and open the template in the editor.
                 <h:form>
                   <div class="inputField">
                     <label for="username"><h:outputText value ="Email"/></label>
-                    <h:inputText id="username" value="#{login.user}"/>
-                    <h:message for="username"/>
+                    <h:inputText id="email" value="#{user_UI.email}"/>
+                    <h:message for="email"/>
                   </div>
 
                   <div class="inputField">
                       <h:outputText value ="Password"/>
-                      <h:inputSecret id="password" value="#{login.pwd}"/>
+                      <h:inputSecret id="password" value="#{user_UI.password}"/>
                       <h:message for="password"/>
                   </div>
 
                   <div class="inputField">
-                      <h:commandButton action="#{login.validateUsernamePassword()}" value="Login" class="button"/> Don't have an account? <h:link value="Register here" outcome="register"/>
+                      <h:commandButton action="#{user_UI.checkCredentials()}" value="Login" class="button"/> Don't have an account? <h:link value="Register here" outcome="register"/>
                   </div>
                 </h:form>
               </div>

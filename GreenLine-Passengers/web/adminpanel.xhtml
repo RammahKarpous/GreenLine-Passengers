@@ -1,22 +1,51 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
-<!DOCTYPE html>
-
-
-
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:h="http://java.sun.com/jsf/html">
-<h:head>
-	<title>Facelet Title</title>
-</h:head>
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 <h:body>
-	<h:form>
-            <p>Welcome #{login.admin}</p>
-            <h:commandLink action="#{login.logout()}" value="Logout"></h:commandLink>
-	</h:form>
+  <ui:composition template="resources/templates/logged-in-template.xhtml">
+    <ui:define name="title">Dashboard</ui:define>
+    <ui:define name="content">
+      <h:form class="latest-flight">
+        <h1>Latest flight</h1>
+        
+        <ui:include src="includes/flights.xhtml" />
+        
+        <div class="actions">
+          <div>
+            <h:link class="button" value="Add flight" outcome="add-flight" />
+            <h:commandButton action="#{loginAdmin.logout}" class="button" value="View flight details"></h:commandButton>
+            <h:commandButton action="#{loginAdmin.logout}" class="button" value="Amend flight"></h:commandButton>
+            <h:commandButton action="#{loginAdmin.logout}" class="button" value="Delete flight"></h:commandButton>
+          </div>
+          <h:commandLink action="view-flights" class="altLink" value="View all flights"></h:commandLink>
+        </div>
+      </h:form>
+      
+      <h:form class="users">
+      <!--<h3>Users information</h3>-->
+        
+        <div class="user-actions">
+          <div class="user-info">
+            <h:outputText class="numbers" value="343,298" />
+            <h:outputText class="words" value="Bookings made" />
+            <h:commandButton action="#{admin_UI.logout()}" class="button" value="View bookings"></h:commandButton>
+          </div>
+          
+          <div class="user-info">
+            <h:outputText class="numbers" value="34,082,374" />
+            <h:outputText class="words" value="Users registered" />
+            <h:commandButton action="#{admin_UI.logout}" class="button" value="View customers"></h:commandButton>
+          </div>
+        </div>
+        
+        <h:commandButton action="#{admin_UI.logout}" class="button" value="Log out"></h:commandButton>
+      </h:form>
+    </ui:define>
+  </ui:composition>
+  
 </h:body>
 </html>
+

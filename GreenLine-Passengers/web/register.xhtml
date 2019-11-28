@@ -8,8 +8,7 @@ and open the template in the editor.
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://java.sun.com/jsf/facelets"
       xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
 
     <h:body>
         <ui:composition template="resources/templates/template.xhtml">
@@ -18,75 +17,75 @@ and open the template in the editor.
                 <h1>Register</h1>
                 <h:form>
                   <div class="inputField">
-                    <label for="firstName"><h:outputText value="First name: "/></label>
-                    <h:inputText id="firstName" value=""/>
+                    <label for="firstName"><h:outputText value ="First name: "/></label>
+                    <h:inputText id="firstName" value="#{customerManager.firstName}"/>
                     <h:message for="firstName"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="middleName"><h:outputText value="Middle name"/></label>
-                    <h:inputText id="middleName" value=""/>
+                    <label for="middleName"><h:outputText value ="Middle name"/></label>
+                    <h:inputText id="middleName" value="#{customerManager.middleName}"/>
                     <h:message for="middleName"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="lastName"><h:outputText value="Last name"/></label>
-                    <h:inputText id="lastName" value=""/>
+                    <label for="lastName"><h:outputText value ="Last name"/></label>
+                    <h:inputText id="lastName" value="#{customerManager.surName}"/>
                     <h:message for="lastName"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="email"><h:outputText value="Email"/></label>
-                    <h:inputText id="email" a:type="email" />
+                    <label for="email"><h:outputText value ="Email"/></label>
+                    <h:inputText id="email" value="#{customerManager.email}" />
                     <h:message for="email"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="password"><h:outputText value="Password"/></label>
-                    <h:inputSecret id="password" value=""/>
+                    <label for="password"><h:outputText value ="Password"/></label>
+                    <h:inputSecret id="password" value="#{customerManager.password}"/>
                     <h:message for="password"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="confirmPassword"><h:outputText value="Comfirm password"/></label>
-                    <h:inputSecret id="confirmPassword" value=""/>
+                    <label for="confirmPassword"><h:outputText value ="Comfirm password"/></label>
+                    <h:inputSecret id="confirmPassword" value="#{customerManager.password}"/>
                     <h:message for="confirmPassword"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="county"><h:outputText value="Country"/></label>
-                    <h:selectOneListbox id="county" value="">
-                      <f:selectItem itemValue="" itemLabel=""/>
+                    <label for="county"><h:outputText value ="Country"/></label>
+                    <h:selectOneListbox id="county" value="#{customerManager.country}">
+                      <f:selectItem itemValue="England" itemLabel="England"/>
                     </h:selectOneListbox>
                     <h:message for="county"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="city"><h:outputText value="City"/></label>
-                    <h:inputText id="city" value="" />
+                    <label for="city"><h:outputText value ="City"/></label>
+                    <h:inputText id="city" value="#{customerManager.city}" />
                     <h:message for="city"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="telephoneNumber"><h:outputText value="Telephone number"/></label>
-                    <h:inputText id="telephoneNumber" value="" />
+                    <label for="telephoneNumber"><h:outputText value ="Telephone number"/></label>
+                    <h:inputText id="telephoneNumber" value="#{customerManager.contactNumber}" />
                     <h:message for="telephoneNumber"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="passportNumber"><h:outputText value="Passport number"/></label>
-                    <h:inputText id="passportNumber" value="" />
+                    <label for="passportNumber"><h:outputText value ="Passport number"/></label>
+                    <h:inputText id="passportNumber" value="#{customerManager.passportNumber}" />
                     <h:message for="passportNumber"/>
                   </div>
 
                   <div class="inputField">
-                    <label for="emergencyContactNumber"><h:outputText value="Emergency contact number"/></label>
-                    <h:inputText id="emergencyContactNumber" value="" />
+                    <label for="emergencyContactNumber"><h:outputText value ="Emergency contact number"/></label>
+                    <h:inputText id="emergencyContactNumber" value="#{customerManager.emergencyContactNumber}" />
                     <h:message for="emergencyContactNumber"/>
                   </div>
 
                   <div class="inputField">
-                    <h:commandButton action="#" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+                      <h:commandButton action="#{customerManager.addCustomerToDB()}" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
                   </div>
                 </h:form>
               </div>

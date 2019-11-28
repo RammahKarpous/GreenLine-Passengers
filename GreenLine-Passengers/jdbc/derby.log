@@ -1,18 +1,5 @@
-Mon Nov 18 17:47:20 GMT 2019 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
-----------------------------------------------------------------
-Mon Nov 18 17:48:18 GMT 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016e-7fa0-4559-00007195b7fc 
-on database directory C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc\Database with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-Loaded from file:/C:/Users/Nurul%20Amin/GlassFish_Server/javadb/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_221-b11
-user.dir=C:\Users\Nurul Amin\GlassFish_Server\javadb
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc
-Database Class Loader started - derby.database.classpath=''
-Mon Nov 18 17:48:44 GMT 2019 Thread[DRDAConnThread_2,5,main] Cleanup action starting
+Sun Nov 24 18:31:13 GMT 2019 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Sun Nov 24 18:31:13 GMT 2019 Thread[DRDAConnThread_2,5,main] Cleanup action starting
 java.sql.SQLException: Database 'amin' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -66,10 +53,23 @@ ERROR XJ004: Database 'amin' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Mon Nov 18 17:48:44 GMT 2019 Thread[DRDAConnThread_2,5,main] (DATABASE = amin), (DRDAID = {6}), Database 'amin' not found.
+Sun Nov 24 18:31:13 GMT 2019 Thread[DRDAConnThread_2,5,main] (DATABASE = amin), (DRDAID = {1}), Database 'amin' not found.
 ----------------------------------------------------------------
-Mon Nov 18 17:54:57 GMT 2019: Shutting down Derby engine
+Sun Nov 24 18:31:18 GMT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016e-9eae-9b3f-00007195b7fc 
+on database directory C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc\Database with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/C:/Users/Nurul%20Amin/GlassFish_Server/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_221-b11
+user.dir=C:\Users\Nurul Amin\GlassFish_Server\javadb
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc
+Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Mon Nov 18 17:54:57 GMT 2019:
-Shutting down instance a816c00e-016e-7fa0-4559-00007195b7fc on database directory C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc\Database with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Mon Nov 25 12:54:16 GMT 2019: Shutting down Derby engine
+----------------------------------------------------------------
+Mon Nov 25 12:54:16 GMT 2019:
+Shutting down instance a816c00e-016e-9eae-9b3f-00007195b7fc on database directory C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc\Database with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
 ----------------------------------------------------------------

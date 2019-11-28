@@ -21,19 +21,19 @@ and open the template in the editor.
             <div class="three-in-a-row">
               <div class="inputField">
                 <label for="flightNumber"><h:outputText value ="Flight number"/></label>
-                <h:inputText id="flightNumber" value="#{admin.flightToCreate.flightNumber}"/>
+                <h:inputText id="flightNumber" value=""/>
                 <h:message for="flightNumber"/>
               </div>
 
               <div class="inputField">
                 <label for="flightCompany"><h:outputText value ="Flight company"/></label>
-                <h:inputText id="flightCompany" value="#{admin.flightToCreate.flightCompany}"/>
+                <h:inputText id="flightCompany" value=""/>
                 <h:message for="flightCompany"/>
               </div>
 
               <div class="inputField">
                 <label for="price"><h:outputText value ="Price"/></label>
-                <h:inputText id="price" value="#{admin.flightToCreate.price}"/>
+                <h:inputText id="price" value=""/>
                 <h:message for="price"/>
               </div>
             </div>
@@ -42,14 +42,14 @@ and open the template in the editor.
               <!-- The company images are the logos of EasyJet, KLM, British Airways etc. -->
               <div class="inputField">
                 <label for="companyImage"><h:outputText value ="Company image"/></label>
-                <h:inputText id="companyImage" value="#{admin.flightToCreate.companyImage}" class="file" />
+                <h:inputFile id="companyImage" value="" class="file" />
                 <h:message for="companyImage"/>
               </div>
               
               <div class="two-in-a-row">
                 <div class="inputField">
                   <label for="departureTime"><h:outputText value="Departure time" /></label>
-                  <h:inputText id="departureTime" value="#{admin.flightToCreate.departureTime}">  
+                  <h:inputText id="departureTime" value="">  
                     <f:convertDateTime pattern="yyyy-MM-dd"/>  
                   </h:inputText>
                   <h:message for="departureTime"/>
@@ -57,7 +57,7 @@ and open the template in the editor.
 
                 <div class="inputField">
                   <label for="arrivalTime"><h:outputText value="Arrival time" /></label>
-                  <h:inputText id="arrivalTime" value="#{admin.flightToCreate.arrivalTime}">  
+                  <h:inputText id="arrivalTime" value="">  
                     <f:convertDateTime pattern="yyyy-MM-dd"/>  
                   </h:inputText>
                   <h:message for="arrivalTime"/>
@@ -68,21 +68,21 @@ and open the template in the editor.
             <div class="two-in-a-row">
               <div class="inputField">
                 <label for="county"><h:outputText value ="Country"/></label>
-                <h:inputText id="county" value="#{admin.flightToCreate.country}">
+                <h:selectOneListbox id="county" value="">
                   <f:selectItem itemValue="" itemLabel=""/>
-                </h:inputText>
+                </h:selectOneListbox>
                 <h:message for="county"/>
               </div>
 
               <div class="inputField">
                 <label for="city"><h:outputText value ="City"/></label>
-                <h:inputText id="city" value="#{admin.flightToCreate.city}" />
+                <h:inputText id="city" value="" />
                 <h:message for="city"/>
               </div>
             </div>
 
             <div class="inputField">
-                <h:commandButton action="#{admin.createFlight}" class="button" value="ADD FLIGHT"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+              <h:commandButton action="#" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
             </div>
           </h:form>
         </div>
@@ -90,5 +90,3 @@ and open the template in the editor.
     </ui:composition>
   </h:body>
 </html>
-
-

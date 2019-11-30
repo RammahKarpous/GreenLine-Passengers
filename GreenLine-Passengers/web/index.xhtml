@@ -18,6 +18,28 @@
             <h3 class="sub-line">Explore The World <span class="borderBottom"></span></h3>
           </div>
         </header>
+        
+        <h:form class="bookingForm">
+          <h1>Book a flight</h1>
+          
+          <div class="radioBtns">
+            <h:selectOneRadio>
+              <f:selectItem itemValue="One way" itemLabel="One way" />
+              <f:selectItem itemValue="Return" itemLabel="Return" />
+            </h:selectOneRadio>
+          </div>
+
+            
+          <div class="flightBookingDetails">
+
+          </div>
+
+          <div class="userFlightBookingDetails">
+
+          </div>
+
+          <h:commandButton value="Book flight" class="button" />
+        </h:form>
       </ui:define>
     </ui:composition>
   </h:body>

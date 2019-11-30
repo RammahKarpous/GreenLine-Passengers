@@ -255,10 +255,6 @@ input {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-end;
-  /*  h3 {
-      display: block;
-      width: 100%;
-    }*/
 }
 .users .user-actions {
   display: flex;

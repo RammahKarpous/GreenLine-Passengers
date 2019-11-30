@@ -1,6 +1,19 @@
-Sun Nov 24 18:31:13 GMT 2019 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
-Sun Nov 24 18:31:13 GMT 2019 Thread[DRDAConnThread_2,5,main] Cleanup action starting
-java.sql.SQLException: Database 'amin' not found.
+Sat Nov 30 16:39:41 GMT 2019 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+----------------------------------------------------------------
+Sat Nov 30 16:39:41 GMT 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016e-bd2e-a520-000051dae479 
+on database directory C:\Users\Rammah\Desktop\GLP\GreenLine-Passengers\GreenLine-Passengers\jdbc\Database1 with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
+Loaded from file:/C:/Users/Rammah/GlassFish_Server/javadb/lib/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.8.0_221-b11
+user.dir=C:\Users\Rammah\GlassFish_Server\javadb
+os.name=Windows 10
+os.arch=amd64
+os.version=10.0
+derby.system.home=C:\Users\Rammah\Desktop\GLP\GreenLine-Passengers\GreenLine-Passengers\jdbc
+Database Class Loader started - derby.database.classpath=''
+Sat Nov 30 16:41:21 GMT 2019 Thread[DRDAConnThread_3,5,main] Cleanup action starting
+java.sql.SQLException: Database 'Database' not found.
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
 	at org.apache.derby.impl.jdbc.Util.generateCsSQLException(Unknown Source)
@@ -22,12 +35,12 @@ java.sql.SQLException: Database 'amin' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.parseDRDAConnection(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.processCommands(Unknown Source)
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
-Caused by: ERROR XJ004: Database 'amin' not found.
+Caused by: ERROR XJ004: Database 'Database' not found.
 	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	... 21 more
 ============= begin nested exception, level (1) ===========
-ERROR XJ004: Database 'amin' not found.
+ERROR XJ004: Database 'Database' not found.
 	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.wrapArgsForTransportAcrossDRDA(Unknown Source)
 	at org.apache.derby.impl.jdbc.SQLExceptionFactory.getSQLException(Unknown Source)
@@ -53,23 +66,4 @@ ERROR XJ004: Database 'amin' not found.
 	at org.apache.derby.impl.drda.DRDAConnThread.run(Unknown Source)
 ============= end nested exception, level (1) ===========
 Cleanup action completed
-Sun Nov 24 18:31:13 GMT 2019 Thread[DRDAConnThread_2,5,main] (DATABASE = amin), (DRDAID = {1}), Database 'amin' not found.
-----------------------------------------------------------------
-Sun Nov 24 18:31:18 GMT 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-016e-9eae-9b3f-00007195b7fc 
-on database directory C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc\Database with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-Loaded from file:/C:/Users/Nurul%20Amin/GlassFish_Server/javadb/lib/derby.jar
-java.vendor=Oracle Corporation
-java.runtime.version=1.8.0_221-b11
-user.dir=C:\Users\Nurul Amin\GlassFish_Server\javadb
-os.name=Windows 10
-os.arch=amd64
-os.version=10.0
-derby.system.home=C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc
-Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Mon Nov 25 12:54:16 GMT 2019: Shutting down Derby engine
-----------------------------------------------------------------
-Mon Nov 25 12:54:16 GMT 2019:
-Shutting down instance a816c00e-016e-9eae-9b3f-00007195b7fc on database directory C:\Users\Nurul Amin\Documents\GitHub\GreenLine-Passengers\GreenLine-Passengers\jdbc\Database with class loader sun.misc.Launcher$AppClassLoader@1d44bcfa 
-----------------------------------------------------------------
+Sat Nov 30 16:41:21 GMT 2019 Thread[DRDAConnThread_3,5,main] (DATABASE = Database), (DRDAID = {2}), Database 'Database' not found.

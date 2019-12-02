@@ -76,6 +76,59 @@ input {
   }
 }
 
+// ========================== HEADER STYLING
+#header {
+  position: relative;
+  width: 100%;
+  height: 746px;
+  overflow: hidden;
+  
+  .header-image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .slogan {
+    position: absolute;
+    top: 39%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    align-items: center;
+    
+    .icon-image {
+      width: 120px;
+    }
+    
+    .line-one {
+      margin: 0;
+      font-size: 3.5em;
+      
+      .glp-green {
+        color: $green;
+      }
+    }
+    
+    .sub-line {
+      font-size: 1.5em;
+      
+      .borderBottom {
+        border: 1.5px solid $dark-blue;
+        width: 82px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+}
+
 // ========================== SIGN IN FORM STYLING
 .form-wrapper {
   width: 980px;

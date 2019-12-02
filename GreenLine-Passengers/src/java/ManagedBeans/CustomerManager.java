@@ -150,7 +150,7 @@ public class CustomerManager implements Serializable {
         try {
             DriverManager.registerDriver(
                     new org.apache.derby.jdbc.ClientDriver());
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database", "admin1", "admin1");
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
 
             PreparedStatement stmt = con.prepareStatement("INSERT INTO PERSON (FIRSTNAME, MIDDLENAME, SURNAME, DATEOFBIRTH, PASSPORTNUMBER, EMERGANCYCONTACT, GENDER, COUNTRY, EMAIL, CITY, TELEPHONE ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, firstName);

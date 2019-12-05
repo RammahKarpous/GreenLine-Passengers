@@ -1,10 +1,5 @@
 package ManagedBeans;
 
-import database.active_record.FlightHandler;
-import database.active_record.User;
-import database.active_record.Flight;
-import database.active_record.PersonFlight;
-import database.active_record.UserHandler;
 import java.io.Serializable;
 import java.sql.Date;
 import java.sql.Time;
@@ -22,20 +17,11 @@ public class Admin_UI  implements Serializable
 {
     private String username;
     private String password;
-    private final transient FlightHandler flightHandler;
-    private final transient UserHandler userHandler;
-    @Inject
-  
-    private transient Flight flightToCreate;
-    private transient Flight flightToView;
-    private transient Flight flightToDelete;
-    private User user = null;
+
     public Admin_UI()
     {
         clearFields();
         
-        flightHandler = new FlightHandler();
-        userHandler = new UserHandler();
     }
     public String getUsername()
     { 
@@ -62,9 +48,6 @@ public class Admin_UI  implements Serializable
     {
         username = "";
         password = "";
-        flightToCreate = null;
-        flightToView = null;
-        flightToDelete = null;
     }
 
     public String checkCredentials()
@@ -91,75 +74,6 @@ public class Admin_UI  implements Serializable
     {
             clearFields();
             return "logout";
-    }
-  //  public ArrayList<Flight> getAllFlights()
-//    {
- //       return flightHandler.findAllShifts();
-  //  }
-
-    public Flight getFlightToCreate()
-    {
-        return flightToCreate;
-    }
-
-   public String setFlightToCreate()
-   {
-       Date d = new Date(System.currentTimeMillis());
-       flightToCreate = new Flight("ghaha","haha",3.5,"haha",d,d,"haha","haha");
-        return "planFlight";
-    }
-
-    public String createFlight()
-    {
-        String outcome = "";
-        
-        if (flightHandler.createFlight(flightToCreate))
-        {
-            flightToView = flightToCreate;
-            flightToCreate = null;
-            outcome = "shiftCreated";
-        }
-        return outcome;
-    }
-    public String cancelFlightCreation()
-    {
-        flightToCreate = null;
-        return "cancel";
-    }
-
-    public Flight getFlightToView()
-    {
-        return flightToView;
-    }
-
-    public String setFlightToView(Flight s)
-    {
-        flightToView = s;
-        return "FlightDetails";
-    }
-
-    public Flight getFlightToDelete()
-    {
-        return flightToDelete;
-    }
-
-    public String setFlightToDelete(Flight s)
-    {
-        flightToDelete = s;
-        return "deleteFlight";
-    }
-
-    public String deleteFlight()
-    {
-        String outcome = "cancel";
-
-        if (flightHandler.deleteFlight(flightToDelete))
-        {
-            flightToDelete = null;
-            outcome = "shiftDeleted";
-        }
-
-        return outcome;
     }
     
 }

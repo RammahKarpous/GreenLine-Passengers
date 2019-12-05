@@ -152,7 +152,7 @@ public class CustomerManager implements Serializable {
                     new org.apache.derby.jdbc.ClientDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO PERSON (FIRSTNAME, MIDDLENAME, SURNAME, DATEOFBIRTH, PASSPORTNUMBER, EMERGANCYCONTACT, GENDER, COUNTRY, EMAIL, CITY, TELEPHONE ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO PERSON (FIRSTNAME, MIDDLENAME, SURNAME, DOB, PASSPORTNUMBER, EMERGANCYCONTACT, GENDER, COUNTRY, CITY, TELEPHONE ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, firstName);
             stmt.setString(3, surName);
             stmt.setDate(4, (java.sql.Date) dob);
@@ -161,9 +161,8 @@ public class CustomerManager implements Serializable {
             stmt.setString(7, gender);
             stmt.setString(8, country);
             stmt.setString(2, middleName);
-            stmt.setString(9, email);
-            stmt.setString(10, city);
-            stmt.setInt(11, contactNumber);
+            stmt.setString(9, city);
+            stmt.setInt(10, contactNumber);
             
              stmt.execute();
        

@@ -1,7 +1,5 @@
 package ManagedBeans;
 
-import database.active_record.UserHandler;
-import database.active_record.User;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;

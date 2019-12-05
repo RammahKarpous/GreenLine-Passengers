@@ -10,7 +10,7 @@ import java.sql.Time;
 
 public class DatabaseConnection
 {
-    private static final String DATABASE_URL = "jdbc:derby://localhost:1527/Database28;user=admin1;password=admin1";
+    private static final String DATABASE_URL = "jdbc:derby://localhost:1527/Database05;user=admin1;password=admin1";
     private final ConnectionManager connectionManager;
     private Connection connection = null;
     private PreparedStatement stmt = null;

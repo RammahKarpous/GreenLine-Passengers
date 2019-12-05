@@ -21,44 +21,36 @@ and open the template in the editor.
             <div class="three-in-a-row">
               <div class="inputField">
                 <label for="flightNumber"><h:outputText value ="Flight number"/></label>
-                <h:inputText id="flightNumber" value=""/>
+                <h:inputText id="flightNumber" value="#{flightManager.flightNumber}"/>
                 <h:message for="flightNumber"/>
               </div>
 
               <div class="inputField">
                 <label for="flightCompany"><h:outputText value ="Flight company"/></label>
-                <h:inputText id="flightCompany" value=""/>
+                <h:inputText id="flightCompany" value="#{flightManager.flightCompany}"/>
                 <h:message for="flightCompany"/>
               </div>
 
               <div class="inputField">
                 <label for="price"><h:outputText value ="Price"/></label>
-                <h:inputText id="price" value=""/>
+                <h:inputText id="price" value="#{flightManager.price}"/>
                 <h:message for="price"/>
               </div>
             </div>
 
             <div class="two-in-a-row">
-              <!-- The company images are the logos of EasyJet, KLM, British Airways etc. -->
-              <div class="inputField">
-                <label for="companyImage"><h:outputText value ="Company image"/></label>
-                <h:inputFile id="companyImage" value="" class="file" />
-                <h:message for="companyImage"/>
-              </div>
               
               <div class="two-in-a-row">
                 <div class="inputField">
                   <label for="departureTime"><h:outputText value="Departure time" /></label>
-                  <h:inputText id="departureTime" value="">  
-                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                  <h:inputText id="departureTime" value="#{flightManager.departureTime}">   
                   </h:inputText>
                   <h:message for="departureTime"/>
                 </div>
 
                 <div class="inputField">
                   <label for="arrivalTime"><h:outputText value="Arrival time" /></label>
-                  <h:inputText id="arrivalTime" value="">  
-                    <f:convertDateTime pattern="yyyy-MM-dd"/>  
+                  <h:inputText id="arrivalTime" value="#{flightManager.arrivalTime}">   
                   </h:inputText>
                   <h:message for="arrivalTime"/>
                 </div>
@@ -68,7 +60,7 @@ and open the template in the editor.
             <div class="two-in-a-row">
               <div class="inputField">
                 <label for="county"><h:outputText value ="Country"/></label>
-                <h:selectOneListbox id="county" value="">
+                <h:selectOneListbox id="county" value="#{flightManager.country}">
                   <f:selectItem itemValue="" itemLabel=""/>
                 </h:selectOneListbox>
                 <h:message for="county"/>
@@ -76,13 +68,13 @@ and open the template in the editor.
 
               <div class="inputField">
                 <label for="city"><h:outputText value ="City"/></label>
-                <h:inputText id="city" value="" />
+                <h:inputText id="city" value="#{flightManager.city}" />
                 <h:message for="city"/>
               </div>
             </div>
 
             <div class="inputField">
-              <h:commandButton action="#" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+                <h:commandButton action="#{flightManager.addFlight()}" class="button" value="Add flight"/> Already have an account? <h:link value="Sign in here" outcome="addFlight"/>
             </div>
           </h:form>
         </div>

@@ -51,4 +51,11 @@
             <to-view-id>/index.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
+     <navigation-rule>
+        <from-view-id>/add-flight.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>addflight</from-outcome>
+            <to-view-id>/adminpanel.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
 </faces-config>

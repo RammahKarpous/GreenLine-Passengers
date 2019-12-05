@@ -13,6 +13,7 @@ import java.sql.Time;
 import java.sql.Date;
 import java.util.ArrayList;
 import DTOS.FlightDTO;
+import org.apache.derby.client.am.DateTime;
 //Managed bean scopes
 @Named(value = "flightManager")
 @SessionScoped
@@ -22,12 +23,12 @@ public class FlightManager implements Serializable {
 private int flightID;
 private int flightNumber;
 private String flightCompany;
-private String cityCode;
+private String city;
 private double price;
-private Date departureTime;
-private Date arrivalTime;
-private Time cancelationDeadline;
+private String departureTime;
+private String arrivalTime;
 private int adminID;
+private String country;
 private ArrayList<FlightDTO> flightList = new ArrayList<>();
 //Getter and setters
     public int getFlightID() {
@@ -53,6 +54,14 @@ private ArrayList<FlightDTO> flightList = new ArrayList<>();
     public void setFlightCompany(String flightCompany) {
         this.flightCompany = flightCompany;
     }
+    
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public double getPrice() {
         return price;
@@ -62,29 +71,22 @@ private ArrayList<FlightDTO> flightList = new ArrayList<>();
         this.price = price;
     }
 
-    public Date getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Date departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
-    public Date getArrivalTime() {
+    public String getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(Date arrivalTime) {
+    public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
-    public Time getCancelationDeadline() {
-        return cancelationDeadline;
-    }
-
-    public void setCancelationDeadline(Time cancelationDeadline) {
-        this.cancelationDeadline = cancelationDeadline;
-    }
 
     public int getAdminID() {
         return adminID;
@@ -98,7 +100,7 @@ private ArrayList<FlightDTO> flightList = new ArrayList<>();
         try {
             DriverManager.registerDriver(
                     new org.apache.derby.jdbc.ClientDriver());
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
             PreparedStatement stmt = con.prepareStatement("SELECT * FROM FLIGHTS");
             
@@ -109,12 +111,12 @@ private ArrayList<FlightDTO> flightList = new ArrayList<>();
                 flightID = rs.getInt("FLIGHTID");
                 flightNumber = rs.getInt("FLIGHTNUMBER");
                 flightCompany = rs.getString("FLIGHTCOMPANY");
-                cityCode = rs.getString("CITYCODE");
-                departureTime = rs.getDate("DEPARTURETIME");
-                arrivalTime = rs.getDate("ARRIVALTIME");
-                cancelationDeadline = rs.getTime("CANCELATIONDEADLINE");
+                city = rs.getString("CITY");
+                departureTime = rs.getString("DEPARTURETIME");
+                arrivalTime = rs.getString("ARRIVALTIME");
+                country = rs.getString("COUNTRY");
                 adminID = rs.getInt("ADMINID");
-                flightList.add(new FlightDTO(flightID, flightNumber, flightCompany, cityCode, price, departureTime, arrivalTime, cancelationDeadline, adminID));
+                flightList.add(new FlightDTO(flightID, flightNumber, flightCompany, city, price, departureTime, arrivalTime, country, adminID));
             }
             
              stmt.execute();
@@ -126,13 +128,43 @@ private ArrayList<FlightDTO> flightList = new ArrayList<>();
             System.out.println(e);
         }
     }
+    
+    public String addFlight(){
+        try {
+            DriverManager.registerDriver(
+                    new org.apache.derby.jdbc.ClientDriver());
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-    public String getCityCode() {
-        return cityCode;
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO FLIGHTS (FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, COUNTRY, PRICE) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                
+                stmt.setInt(1, flightNumber);
+                stmt.setString(2, flightCompany);
+                stmt.setString(3, city);
+                stmt.setString(4, departureTime);
+                stmt.setString(5, arrivalTime);
+                stmt.setString(6, country);
+                stmt.setDouble(7, price);
+               
+            
+          
+            
+             stmt.execute();
+       
+            stmt.close();
+            con.close();
+            
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return "adminpanel";
     }
 
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public ArrayList<FlightDTO> getFlightList() {

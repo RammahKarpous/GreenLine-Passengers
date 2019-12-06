@@ -31,16 +31,39 @@
 
             
           <div class="flightBookingDetails">
-
+            <div class="inputField">
+              <label for="departureFrom"><h:outputText value ="From"/></label>
+              <h:inputText id="departureFrom" value=""/>
+              <h:message for="departureFrom"/>
+            </div>
+            
+            <div class="inputField">
+              <label for="arrival"><h:outputText value ="arrival"/></label>
+              <h:inputText id="arrival" value=""/>
+              <h:message for="arrival"/>
+            </div>
+            
+            <div class="inputField">
+              <label for="departureTime"><h:outputText value ="Departure"/></label>
+              <h:inputText id="departureTime" value=""/>
+              <h:message for="departureTime"/>
+            </div>
+            
+            <div class="arrivalTime">
+              <label for="arrivalTime"><h:outputText value ="Arrival"/></label>
+              <h:inputText id="arrivalTime" value=""/>
+              <h:message for="arrivalTime"/>
+            </div>
           </div>
 
           <div class="userFlightBookingDetails">
-
+            
           </div>
 
           <h:commandButton value="Book flight" class="button" />
         </h:form>
       </ui:define>
+      <h:outputScript library="ja" name="script.js" />
     </ui:composition>
   </h:body>
 </html>

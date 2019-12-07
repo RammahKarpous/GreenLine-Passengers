@@ -183,6 +183,34 @@ input {
   margin: 160px auto;
 }
 
+.bookingForm {
+  width: 980px;
+  margin: -90px auto 100px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  border-radius: 20px;
+  background: #fff;
+  z-index: 1;
+  position: relative;
+}
+.bookingForm .radioBtns {
+  margin: 0px 0px 10px 0px;
+}
+.bookingForm .flightBookingDetails {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+}
+.bookingForm .flightBookingDetails .inputField:nth-child(1) {
+  grid-column: 1/3;
+}
+.bookingForm .flightBookingDetails .inputField:nth-child(2) {
+  grid-column: 3/5;
+}
+.bookingForm input[type=radio] {
+  margin: 0;
+}
+
 .latest-flight {
   width: 970px;
   margin: 50px auto;

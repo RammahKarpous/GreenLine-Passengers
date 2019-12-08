@@ -1,1 +1,2 @@
-Sun Dec 08 09:29:02 GMT 2019 : Apache Derby Network Server - 10.14.2.0 - (1828579) started and ready to accept connections on port 1527
+Sun Dec 08 15:53:28 GMT 2019 : Could not listen on port 1527 on host localhost:
+ java.net.BindException: Address already in use: JVM_Bind

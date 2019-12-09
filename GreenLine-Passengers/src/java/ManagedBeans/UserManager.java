@@ -54,7 +54,7 @@ public class UserManager {
                         new org.apache.derby.jdbc.ClientDriver());
                 Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
 
-                PreparedStatement stmt = con.prepareStatement("INSERT INTO USERS (EMAIL, PASSWORD) VALUES (?, ?)");
+                PreparedStatement stmt = con.prepareStatement("INSERT INTO USERS ( EMAIL, PASSWORD ) VALUES ( ?, ? )");
                 stmt.setString(1, email);
                 stmt.setString(2, password);
 
@@ -68,6 +68,6 @@ public class UserManager {
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Password does not match"));
         }
-                return "null";
+        return null;
     }
 }

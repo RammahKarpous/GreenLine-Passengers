@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html">
+  
+  <h:body>
+    <ui:composition template="resources/templates/template.xhtml">
+      <ui:define name="title">Update flights</ui:define>
+      <ui:define name="content">
+        <div class="wrapper form-wrapper login">
+          <h1>Update flight</h1>
+          <h:form>
+            <div class="inputField">
+              <label for="flightCode"><h:outputText value ="Flight Code"/></label>
+              <h:inputText id="flightCode" value=""/>
+              <h:message for="flightCode"/>
+            </div>
+            
+            <div class="inputField">
+              <h:commandButton value="Update" class="button"/>
+            </div>
+          </h:form>
+        </div>
+      </ui:define>
+    </ui:composition>
+  </h:body>
+</html>

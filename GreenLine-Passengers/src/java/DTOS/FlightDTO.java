@@ -10,12 +10,13 @@ private int flightNumber;
 private String flightCompany;
 private String cityCode;
 private double price;
-private Date departureTime;
-private Date arrivalTime;
-private Time cancelationDeadline;
+private String departureTime;
+private String arrivalTime;
+private String cancelationDeadline;
 private int adminID;
+private String country;
 
-    public FlightDTO(int flightID, int flightNumber, String flightCompany, String cityCode, double price, Date departureTime, Date arrivalTime, Time cancelationDeadline, int adminID) {
+    public FlightDTO(int flightID, int flightNumber, String flightCompany, String cityCode, double price, String departureTime, String arrivalTime, String cancelationDeadline, int adminID, String country) {
         this.flightID = flightID;
         this.flightNumber = flightNumber;
         this.flightCompany = flightCompany;
@@ -25,6 +26,7 @@ private int adminID;
         this.arrivalTime = arrivalTime;
         this.cancelationDeadline = cancelationDeadline;
         this.adminID = adminID;
+        this.country = country;
     }
 
     public int getFlightID() {
@@ -47,21 +49,28 @@ private int adminID;
         return price;
     }
 
-    public Date getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public Date getArrivalTime() {
+    public String getArrivalTime() {
         return arrivalTime;
     }
 
-    public Time getCancelationDeadline() {
+    public String getCancelationDeadline() {
         return cancelationDeadline;
     }
 
     public int getAdminID() {
         return adminID;
     }
+
+    public String getCountry()
+    {
+        return country;
+    }
+    
+    
 
     public void setFlightID(int flightID) {
         this.flightID = flightID;
@@ -83,21 +92,28 @@ private int adminID;
         this.price = price;
     }
 
-    public void setDepartureTime(Date departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
-    public void setArrivalTime(Date arrivalTime) {
+    public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 
-    public void setCancelationDeadline(Time cancelationDeadline) {
+    public void setCancelationDeadline(String cancelationDeadline) {
         this.cancelationDeadline = cancelationDeadline;
     }
 
     public void setAdminID(int adminID) {
         this.adminID = adminID;
     }
+
+    public void setCountry(String country)
+    {
+        this.country = country;
+    }
+    
+    
     
 
 

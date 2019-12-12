@@ -21,18 +21,18 @@ and open the template in the editor.
                 <h:form>
                   <div class="inputField">
                     <label for="username"><h:outputText value ="Username: "/></label>
-                    <h:inputText id="username" value="#{login.admin}"/>
+                    <h:inputText id="username" value="#{admin.username}"/>
                     <h:message for="username"/>
                   </div>
 
                   <div class="inputField">
                       <h:outputText value ="Password: "/>
-                      <h:inputSecret id="password" value="#{login.pwdadmin}"/>
+                      <h:inputSecret id="password" value="#{admin.password}"/>
                       <h:message for="password"/>
                   </div>
 
                   <div class="inputField">
-                      <h:commandButton action="#{login.validateUsernamePasswordadmin()}" value="Login" class="button"/> 
+                      <h:commandButton action="#{admin.checkCredentials()}" value="Login" class="button"/> 
                   </div>
                 </h:form>
               </div>

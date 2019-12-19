@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
- "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
@@ -9,65 +9,64 @@
     <ui:composition template="resources/templates/logged-in-template.xhtml">
       <ui:define name="title">All flights</ui:define>
       <ui:define name="content">
-          <c:forEach var="flight" items="#{flightManager.flightList}">
-            <h:form class="latest-flight">
-              <h1>All flights</h1>
-              <div class="flight-wrapper">
-                    <!-- fetch images -->
-                    <div class="images">
-                      <h:graphicImage value="" />
-                      <h:graphicImage value="" />
-                    </div>
+        <h1>All flights</h1>
+        <h:outputText value="#{flightManager.fetchFlights.size}" />
+        <ui:repeat var="flight" value="#{flightManager.fetchFlights}" varStatus="status">
+          <div class="flight-wrapper">
+            <!-- fetch images -->
+            <div class="images">
+              <h:graphicImage value="" />
+              <h:graphicImage value="" />
+            </div>
 
-                    <!-- fetch departure & arrival time and location -->
-                    <div class="departure-arrival">
-                      <div class="info">
+            <!-- fetch departure & arrival time and location -->
+            <div class="departure-arrival">
+              <div class="info">
 
-                        <!-- departure time and location -->
-                        <div class="flight">
-                            <h:outputText class="flight-time" value="#{flight.departureTime}" />
-                            <h:outputText class="flight-location" value="#{flight.cityCode}" />
-                        </div>
+                <!-- departure time and location -->
+                <div class="flight">
+                  <h:outputText class="flight-time" value="#{flight.departureTime}" />
+                  <h:outputText class="flight-location" value="#{flight.cityCode}" />
+                </div>
 
-                        <!-- flight duration -->
-                        <div class="duration">
-                          <h:outputText value="6h 30m" />
-                        </div>
+                <!-- flight duration -->
+                <div class="duration">
+                  <h:outputText value="6h 30m" />
+                </div>
 
-                        <!-- return flight time and location -->
-                        <div class="flight">
-                            <h:outputText class="flight-time" value="#{flight.arrivalTime}" />
-                            <h:outputText class="flight-location" value="#{flight.cityCode}" />
-                        </div>
-                      </div>
+                <!-- return flight time and location -->
+                <div class="flight">
+                  <h:outputText class="flight-time" value="#{flight.arrivalTime}" />
+                  <h:outputText class="flight-location" value="#{flight.cityCode}" />
+                </div>
+              </div>
 
-                      <div class="info">
+              <div class="info">
 
-                        <!-- departure time and location -->
-                        <div class="flight">
-                          <h:outputText class="flight-time" value="06:00" />
-                          <h:outputText class="flight-location" value="BHX" />
-                        </div>
+                <!-- departure time and location -->
+                <div class="flight">
+                  <h:outputText class="flight-time" value="06:00" />
+                  <h:outputText class="flight-location" value="BHX" />
+                </div>
 
-                        <!-- flight duration -->
-                        <div class="duration">
-                          <h:outputText value="6h 30m" />
-                        </div>
+                <!-- flight duration -->
+                <div class="duration">
+                  <h:outputText value="6h 30m" />
+                </div>
 
-                        <!-- return flight time and location -->
-                        <div class="flight">
-                          <h:outputText class="flight-time" value="14:30" />
-                          <h:outputText class="flight-location" value="BCN" />
-                        </div>
-                      </div>
-                    </div>
+                <!-- return flight time and location -->
+                <div class="flight">
+                  <h:outputText class="flight-time" value="14:30" />
+                  <h:outputText class="flight-location" value="BCN" />
+                </div>
+              </div>
+            </div>
 
-                    <div class="price">
-                      <h:outputText value="£103" />
-                    </div>
-                  </div>
-            </h:form>
-        </c:forEach>
+            <div class="price">
+              <h:outputText value="£103" />
+            </div>
+          </div>
+        </ui:repeat>
       </ui:define>
     </ui:composition>
   </h:body>

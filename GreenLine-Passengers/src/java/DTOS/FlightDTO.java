@@ -70,8 +70,6 @@ private String country;
         return country;
     }
     
-    
-
     public void setFlightID(int flightID) {
         this.flightID = flightID;
     }

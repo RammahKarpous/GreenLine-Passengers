@@ -228,6 +228,18 @@ input {
     }
   }
   
+  .userFlightBookingDetails {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    
+    .numberInput {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5px;
+    }
+  }
+  
   input[type=radio] {
     margin: 0;
   }

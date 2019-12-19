@@ -116,7 +116,8 @@ private ArrayList<FlightDTO> flightList = new ArrayList<>();
                 arrivalTime = rs.getString("ARRIVALTIME");
                 country = rs.getString("COUNTRY");
                 adminID = rs.getInt("ADMINID");
-                flightList.add(new FlightDTO(flightID, flightNumber, flightCompany, city, price, departureTime, arrivalTime, country, adminID));
+                flightList.add(new FlightDTO(flightID, flightNumber, flightCompany, city, price, departureTime, arrivalTime, departureTime, adminID, country));
+                       
             }
             
              stmt.execute();

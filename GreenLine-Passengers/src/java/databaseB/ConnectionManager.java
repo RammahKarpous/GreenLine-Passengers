@@ -1,183 +1,63 @@
 package databaseB;
 
-import java.sql.Connection;
-import java.sql.Date;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Time;
+import java.util.ArrayList;
 
-public class DatabaseConnection
+public class ConnectionManager
 {
-    private static final String DATABASE_URL = "jdbc:derby://localhost:1527/Database05;user=admin1;password=admin1";
-    private final ConnectionManager connectionManager;
-    private Connection connection = null;
-    private PreparedStatement stmt = null;
-    private ResultSet rs = null;
-    private int updateCount = -1;
 
-    DatabaseConnection(ConnectionManager connectionManager) throws SQLException
+    private static final ConnectionManager instance = new ConnectionManager();
+
+    private final ArrayList<DatabaseConnection> availableConnections;
+    private final ArrayList<DatabaseConnection> busyConnections;
+
+    private ConnectionManager()
     {
-        this.connectionManager = connectionManager;
+        busyConnections = new ArrayList();
+        availableConnections = new ArrayList();
 
-        DriverManager.registerDriver(new org.apache.derby.jdbc.ClientDriver());
-        connection = DriverManager.getConnection(DATABASE_URL);
-    }
-
-    public void close()
-    {
-        connectionManager.releaseConnection(this);
-    }
-
-    public boolean prepareStatement(String sql)
-    {
-        boolean statementPrepared = false;
-
-        try
-        {
-            stmt = connection.prepareStatement(sql);
-            statementPrepared = true;
-        }
-        catch (SQLException sqle)
-        {
-        }
-
-        return statementPrepared;
-    }
-
-    public boolean setStatementParameter(int paramIndex, int paramValue)
-    {
-        boolean paramSet = false;
-
-        if (stmt != null)
+        for (int i = 0; i < 5; i++)
         {
             try
             {
-                stmt.setInt(paramIndex, paramValue);
-                paramSet = true;
+                availableConnections.add(new DatabaseConnection(this));
             }
             catch (SQLException sqle)
             {
             }
         }
-        return paramSet;
     }
 
-    public boolean setStatementParameter(int paramIndex, String paramValue)
+    public static ConnectionManager getInstance()
     {
-        boolean paramSet = false;
+        return instance;
+    }
 
-        if (stmt != null)
+    public DatabaseConnection getConnection()
+    {
+        DatabaseConnection connection = null;
+        synchronized (this)
         {
-            try
+            if (!availableConnections.isEmpty())
             {
-                stmt.setString(paramIndex, paramValue);
-                paramSet = true;
-            }
-            catch (SQLException sqle)
-            {
+                connection = availableConnections.remove(0);
+                busyConnections.add(connection);
             }
         }
-        return paramSet;
+        return connection;
     }
 
-    public boolean setStatementParameter(int paramIndex, boolean paramValue)
+    public void releaseConnection(DatabaseConnection connection)
     {
-        boolean paramSet = false;
-
-        if (stmt != null)
+        if (connection != null)
         {
-            try
+            synchronized (this)
             {
-                stmt.setBoolean(paramIndex, paramValue);
-                paramSet = true;
-            }
-            catch (SQLException sqle)
-            {
+                if (busyConnections.remove(connection))
+                {
+                    availableConnections.add(connection);
+                }
             }
         }
-        return paramSet;
-    }
-
-    public boolean setStatementParameter(int paramIndex, Date paramValue)
-    {
-        boolean paramSet = false;
-
-        if (stmt != null)
-        {
-            try
-            {
-                stmt.setDate(paramIndex, paramValue);
-                paramSet = true;
-            }
-            catch (SQLException sqle)
-            {
-            }
-        }
-        return paramSet;
-    }
-
-    public boolean setStatementParameter(int paramIndex, Time paramValue)
-    {
-        boolean paramSet = false;
-
-        if (stmt != null)
-        {
-            try
-            {
-                stmt.setTime(paramIndex, paramValue);
-                paramSet = true;
-            }
-            catch (SQLException sqle)
-            {
-            }
-        }
-        return paramSet;
-    }
-        public boolean setStatementParameter(int paramIndex, Double paramValue)
-    {
-        boolean paramSet = false;
-
-        if (stmt != null)
-        {
-            try
-            {
-                stmt.setDouble(paramIndex, paramValue);
-                paramSet = true;
-            }
-            catch (SQLException sqle)
-            {
-            }
-        }
-        return paramSet;
-    }
-
-    public boolean executePreparedStatement()
-    {
-        boolean resultSetAvailable = false;
-
-        try
-        {
-            resultSetAvailable = stmt.execute();
-            updateCount = stmt.getUpdateCount();
-            rs = stmt.getResultSet();
-        }
-        catch (SQLException sqle)
-        {
-        }
-
-        return resultSetAvailable;
-    }
-
-    public int getUpdateCount()
-    {
-        return updateCount;
-    }
-
-    public ResultSet getResultSet()
-    {
-        return rs;
     }
 }
-

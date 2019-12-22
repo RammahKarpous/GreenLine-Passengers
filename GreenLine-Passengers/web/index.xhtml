@@ -19,7 +19,8 @@
           </div>
         </header>
         
-        <h:form class="bookingForm">
+        <h:form class="bookingForm form-wrapper booking">
+
           <h1>Book a flight</h1>
           
           <div class="radioBtns">
@@ -29,19 +30,62 @@
             </h:selectOneRadio>
           </div>
 
-            
           <div class="flightBookingDetails">
-
+            <div class="inputField">
+              <label for="departureFrom"><h:outputText value ="From"/></label>
+              <h:inputText id="departureFrom" value=""/>
+              <h:message for="departureFrom"/>
+            </div>
+            
+            <div class="inputField">
+              <label for="arrival"><h:outputText value ="arrival"/></label>
+              <h:inputText id="arrival" value=""/>
+              <h:message for="arrival"/>
+            </div>
+            
+            <div class="inputField">
+              <label for="departureTime"><h:outputText value ="Departure"/></label>
+              <h:inputText id="departureTime" value=""/>
+              <h:message for="departureTime"/>
+            </div>
+            
+            <div class="inputField">
+              <label for="arrivalTime"><h:outputText value ="Arrival"/></label>
+              <h:inputText id="arrivalTime" value=""/>
+              <h:message for="arrivalTime"/>
+            </div>
           </div>
 
           <div class="userFlightBookingDetails">
-
+            <div class="inputField">
+              <label for="adults"><h:outputText value ="Adults"/></label>
+              
+              <div class="numberInput">
+                <div class="counterBtn">
+                  <div></div>
+                </div>
+                
+                <h:inputText maxlength="2" value="" />
+                
+                <div class="counterBtn">
+                  <div></div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="inputField">
+              <label for="county"><h:outputText value ="Country"/></label>
+              <h:selectOneListbox id="county" value="#{customerManager.country}">
+                <f:selectItem itemValue="England" itemLabel="England"/>
+              </h:selectOneListbox>
+              <h:message for="county"/>
+            </div>
           </div>
 
           <h:commandButton value="Book flight" class="button" />
         </h:form>
       </ui:define>
+      <h:outputScript library="ja" name="script.js" />
     </ui:composition>
   </h:body>
 </html>
-

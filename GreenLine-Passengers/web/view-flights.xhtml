@@ -11,7 +11,7 @@
       <ui:define name="content">
         <h1>All flights</h1>
         <h:outputText value="#{flightManager.fetchFlights.size}" />
-        <ui:repeat var="flight" value="#{flightManager.fetchFlights}" varStatus="status">
+        <ui:repeat var="flight" value="#{flightManager.fetchFlights}">
           <div class="flight-wrapper">
             <!-- fetch images -->
             <div class="images">

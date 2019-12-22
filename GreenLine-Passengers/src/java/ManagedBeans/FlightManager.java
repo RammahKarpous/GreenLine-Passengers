@@ -111,16 +111,21 @@ public class FlightManager implements Serializable {
 
       ResultSet rs = stmt.executeQuery();
 
-      while (rs.next()) {
-        flightID = rs.getInt("FLIGHTID");
-        flightNumber = rs.getInt("FLIGHTNUMBER");
-        flightCompany = rs.getString("FLIGHTCOMPANY");
-        city = rs.getString("CITY");
-        departureTime = rs.getString("DEPARTURETIME");
-        arrivalTime = rs.getString("ARRIVALTIME");
-        country = rs.getString("COUNTRY");
-        adminID = rs.getInt("ADMINID");
-        flightList.add(new FlightDTO(flightID, flightNumber, flightCompany, city, price, departureTime, arrivalTime, departureTime, adminID, country));
+      while (rs.next()) 
+      {
+        FlightDTO  flights = new FlightDTO(
+          rs.getInt("FLIGHTID"),
+          rs.getInt("FLIGHTNUMBER"),
+          rs.getString("FLIGHTCOMPANY"),
+          rs.getString("CITY"),
+          rs.getDouble("Price"),
+          rs.getString("DEPARTURETIME"),
+          rs.getString("ARRIVALTIME"),
+          rs.getString("CANCELLATIONDATE"),
+          rs.getInt("ADMINID"),
+          rs.getString("COUNTRY")
+        );
+        flightList.add(flights);
       }
 
       stmt.execute();

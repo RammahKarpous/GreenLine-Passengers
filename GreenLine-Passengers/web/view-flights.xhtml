@@ -11,6 +11,14 @@
       <ui:define name="content">
         <h1>All flights</h1>
         <h:outputText value="#{flightManager.fetchFlights.size}" />
+        <form>
+          <h:dataTable var="flight" value="#{flightManager.fetchFlights}">
+            
+            <h:outputText class="flight-time" value="#{flight.departureTime}" />
+            <h:outputText class="flight-location" value="#{flight.cityCode}" />
+            
+          </h:dataTable>
+        </form>
         <ui:repeat var="flight" value="#{flightManager.fetchFlights}">
           <div class="flight-wrapper">
             <!-- fetch images -->

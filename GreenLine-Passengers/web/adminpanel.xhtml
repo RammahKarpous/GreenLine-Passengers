@@ -17,15 +17,14 @@
           <div>
             <h:link class="button" value="Add flight" outcome="add-flight" />
             <h:commandButton action="#{admin.logout}" class="button" value="View flight details"></h:commandButton>
-            <h:commandButton action="#{admin.logout}" class="button" value="Amend flight"></h:commandButton>
+            <h:link value="Update Flights" outcome="updateflights" />
             <h:commandButton action="#{admin.logout}" class="button" value="Delete flight"></h:commandButton>
           </div>
-          <h:commandLink action="view-flights" class="altLink" value="View all flights"></h:commandLink>
+          <h:commandButton action="view-flights" class="altLink" value="View all flights"></h:commandButton>
         </div>
       </h:form>
       
       <h:form class="users">
-      <!--<h3>Users information</h3>-->
         
         <div class="user-actions">
           <div class="user-info">

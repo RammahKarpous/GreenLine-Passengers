@@ -21,13 +21,13 @@ and open the template in the editor.
             <div class="three-in-a-row">
               <div class="inputField">
                 <label for="flightNumber"><h:outputText value ="Flight number"/></label>
-                <h:inputText id="flightNumber" value="#{flightManager.flightNumber}"/>
+                <h:inputText id="flightNumber" value=""/>
                 <h:message for="flightNumber"/>
               </div>
 
               <div class="inputField">
                 <label for="flightCompany"><h:outputText value ="Flight company"/></label>
-                <h:inputText id="flightCompany" value="#{flightManager.flightCompany}"/>
+                <h:inputText id="flightCompany" value=""/>
                 <h:message for="flightCompany"/>
               </div>
 
@@ -74,7 +74,7 @@ and open the template in the editor.
             </div>
 
             <div class="inputField">
-                <h:commandButton action="#{flightManager.addFlight()}" class="button" value="Add flight"/>
+                <h:commandButton action="#{flightManager.addFlight()}" class="button" value="Add flight"/> Already have an account? <h:link value="Sign in here" outcome="addFlight"/>
             </div>
           </h:form>
         </div>

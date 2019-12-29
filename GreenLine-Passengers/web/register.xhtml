@@ -36,19 +36,19 @@ and open the template in the editor.
 
                   <div class="inputField">
                     <label for="email"><h:outputText value ="Email"/></label>
-                    <h:inputText id="email" value="#{customerManager.email}" />
+                    <h:inputText id="email" value="#{userManager.email}" />
                     <h:message for="email"/>
                   </div>
 
                   <div class="inputField">
                     <label for="password"><h:outputText value ="Password"/></label>
-                    <h:inputSecret id="password" value="#{customerManager.password}"/>
+                    <h:inputSecret id="password" value="#{userManager.password}"/>
                     <h:message for="password"/>
                   </div>
 
                   <div class="inputField">
                     <label for="confirmPassword"><h:outputText value ="Comfirm password"/></label>
-                    <h:inputSecret id="confirmPassword" value="#{customerManager.password}"/>
+                    <h:inputSecret id="confirmPassword" value="#{userManager.passwordCheck}"/>
                     <h:message for="confirmPassword"/>
                   </div>
 
@@ -85,7 +85,9 @@ and open the template in the editor.
                   </div>
 
                   <div class="inputField">
-                      <h:commandButton action="#{customerManager.addCustomerToDB()}" class="button" value="Register"/> Already have an account? <h:link value="Sign in here" outcome="login"/>
+                      <h:commandButton action="#{userManager.addUserToDB()}" class="button" value="Register"/>
+                      <h:commandButton action="#{customerManager.addCustomerToDB()}" class="button" value="Register"/>
+                          Already have an account? <h:link value="Sign in here" outcome="login"/>
                   </div>
                 </h:form>
               </div>

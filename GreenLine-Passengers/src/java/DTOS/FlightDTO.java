@@ -8,24 +8,25 @@ public class FlightDTO {
 private int flightID;
 private int flightNumber;
 private String flightCompany;
-private String city;
+private String cityCode;
 private double price;
 private String departureTime;
 private String arrivalTime;
-private Time cancelationDeadline;
-private String country;
+private String cancelationDeadline;
 private int adminID;
+private String country;
 
-    public FlightDTO(int flightID, int flightNumber, String flightCompany, String city, double price, String departureTime, String arrivalTime, String country, int adminID) {
+    public FlightDTO(int flightID, int flightNumber, String flightCompany, String cityCode, double price, String departureTime, String arrivalTime, String cancelationDeadline, int adminID, String country) {
         this.flightID = flightID;
         this.flightNumber = flightNumber;
         this.flightCompany = flightCompany;
-        this.city = city;
+        this.cityCode = cityCode;
         this.price = price;
         this.departureTime = departureTime;
         this.arrivalTime = arrivalTime;
-        this.country = country;
+        this.cancelationDeadline = cancelationDeadline;
         this.adminID = adminID;
+        this.country = country;
     }
 
     public int getFlightID() {
@@ -40,19 +41,12 @@ private int adminID;
         return flightCompany;
     }
 
-    public String getCity() {
-        return city;
+    public String getCityCode() {
+        return cityCode;
     }
 
     public double getPrice() {
         return price;
-    }
-    public String getCountry() {
-        return country;
-    }
-
-    public void setCountry(String country) {
-        this.country = country;
     }
 
     public String getDepartureTime() {
@@ -63,11 +57,19 @@ private int adminID;
         return arrivalTime;
     }
 
+    public String getCancelationDeadline() {
+        return cancelationDeadline;
+    }
 
     public int getAdminID() {
         return adminID;
     }
 
+    public String getCountry()
+    {
+        return country;
+    }
+    
     public void setFlightID(int flightID) {
         this.flightID = flightID;
     }
@@ -80,8 +82,8 @@ private int adminID;
         this.flightCompany = flightCompany;
     }
 
-    public void setCity(String city) {
-        this.city = city;
+    public void setCityCode(String cityCode) {
+        this.cityCode = cityCode;
     }
 
     public void setPrice(double price) {
@@ -96,11 +98,20 @@ private int adminID;
         this.arrivalTime = arrivalTime;
     }
 
-
+    public void setCancelationDeadline(String cancelationDeadline) {
+        this.cancelationDeadline = cancelationDeadline;
+    }
 
     public void setAdminID(int adminID) {
         this.adminID = adminID;
     }
+
+    public void setCountry(String country)
+    {
+        this.country = country;
+    }
+    
+    
     
 
 

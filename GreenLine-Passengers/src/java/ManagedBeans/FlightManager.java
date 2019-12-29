@@ -97,6 +97,7 @@ public class FlightManager implements Serializable {
   public void setAdminID(int adminID) {
     this.adminID = adminID;
   }
+  
   //Methods
 
   public ArrayList<FlightDTO> fetchFlights() {
@@ -168,6 +169,60 @@ public class FlightManager implements Serializable {
     }
     return "adminpanel";
   }
+  public String deleteFlight(){
+        try {
+            DriverManager.registerDriver(
+                    new org.apache.derby.jdbc.ClientDriver());
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+
+            PreparedStatement stmt = con.prepareStatement("DELETE FROM FLIGHTS WHERE FLIGHTNUMBER = ?");
+
+            stmt.setInt(1, flightNumber);
+            stmt.executeUpdate();
+
+    try {
+      DriverManager.registerDriver(
+              new org.apache.derby.jdbc.ClientDriver());
+      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
+
+
+            stmt.close();
+            con.close();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return "adminpanel";
+    }
+  public String updateFlight(){
+        try {
+            DriverManager.registerDriver(
+                    new org.apache.derby.jdbc.ClientDriver());
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+
+            PreparedStatement stmt = con.prepareStatement("UPDATE FLIGHTS " + "FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, COUNTRY, PRICE");
+
+                  stmt.setInt(1, flightNumber);
+        stmt.setString(2, flightCompany);
+        stmt.setString(3, city);
+        stmt.setString(4, departureTime);
+        stmt.setString(5, arrivalTime);
+        stmt.setString(6, country);
+        stmt.setDouble(7, price);
+            stmt.executeUpdate();
+
+
+
+
+
+            stmt.close();
+            con.close();
+
+        } catch (SQLException e) {
+            System.out.println(e);
+        }
+        return "adminpanel";
+    }
 
   public String getCity() {
     return city;

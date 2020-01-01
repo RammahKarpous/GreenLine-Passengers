@@ -7,7 +7,7 @@
    
   <h:body>
     <ui:composition template="resources/templates/template.xhtml">
-      <ui:define name="title">GreenLine Passenger: Home</ui:define>
+      <ui:define name="title">GreenLine Passenger | Home</ui:define>
       <ui:define name="content">
         <header id="header">
           <h:graphicImage class="header-image" value="resources/img/header-image.png" alt="GreenLine Passenger header image" />
@@ -29,13 +29,58 @@
             </h:selectOneRadio>
           </div>
 
+<<<<<<< HEAD
+=======
+          <div class="flightBookingDetails">
+            <div class="inputField">
+              <label for="departureFrom"><h:outputText value ="From"/></label>
+              <h:selectOneMenu id="departureFrom" value="">
+                <ui:include src="includes/flights-from.xhtml" />
+              </h:selectOneMenu>
+              <h:message for="departureFrom"/>
+            </div>
+            
+            <div class="inputField">
+              <label for="arrival"><h:outputText value ="arrival"/></label>
+              <h:selectOneMenu id="arrival" value="">
+                <ui:include src="includes/flights-arrival.xhtml" />
+              </h:selectOneMenu>
+              <h:message for="arrival"/>
+            </div>
+            
+            <div class="inputField">
+              <label for="departureTime"><h:outputText value ="Departure"/></label>
+              <h:inputText id="departureTime" value=""/>
+              <h:message for="departureTime"/>
+            </div>
+>>>>>>> origin/front-end
             
           <div class="flightBookingDetails">
 
           </div>
 
           <div class="userFlightBookingDetails">
+<<<<<<< HEAD
 
+=======
+            <div class="inputField">
+              <label for="adults"><h:outputText value ="Adults"/></label>
+              <h:inputText maxlength="2" id="adults" value="" a:type="number" />
+            </div>
+
+            <div class="inputField">
+              <label for="children"><h:outputText value ="Children"/></label>
+              <h:inputText maxlength="2" id="children" value="" a:type="number" />
+            </div>
+
+            <div class="inputField">
+              <label for="county"><h:outputText value ="Country"/></label>
+              <h:selectOneListbox id="county" value="#{customerManager.country}">
+                <f:selectItem itemValue="England" itemLabel="England"/>
+              </h:selectOneListbox>
+              <h:message for="county"/>
+            </div>
+>>>>>>> origin/front-end
           </div>
 
           <h:commandButton value="Book flight" class="button" />
@@ -44,4 +89,3 @@
     </ui:composition>
   </h:body>
 </html>
-

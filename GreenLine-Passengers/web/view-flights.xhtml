@@ -10,7 +10,7 @@
       <ui:define name="title">All flights</ui:define>
       <ui:define name="content">
         <h1>All flights</h1>
-        <h:outputText value="#{flightManager.fetchFlights.size}" />
+        <h:outputText value="#{flightManager.fetchFlights.size()}" />
         <form>
           <h:dataTable var="flight" value="#{flightManager.fetchFlights}">
             
@@ -19,7 +19,7 @@
             
           </h:dataTable>
         </form>
-        <ui:repeat var="flight" value="#{flightManager.fetchFlights}">
+        <ui:repeat value="#{flightManager.fetchFlights}" var="flight" >
           <div class="flight-wrapper">
             <!-- fetch images -->
             <div class="images">

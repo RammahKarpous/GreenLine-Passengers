@@ -99,7 +99,6 @@ public class FlightManager implements Serializable {
   }
   
   //Methods
-
   public ArrayList<FlightDTO> fetchFlights() {
     ArrayList<FlightDTO> flightList = new ArrayList<>();
 
@@ -130,17 +129,16 @@ public class FlightManager implements Serializable {
       }
 
       stmt.execute();
+      
       rs.close();
-
       stmt.close();
       con.close();
 
     } catch (SQLException e) {
-      System.out.println(e);
+      
     }
 
     return flightList;
-
   }
 
   public String addFlight() {
@@ -169,32 +167,29 @@ public class FlightManager implements Serializable {
     }
     return "adminpanel";
   }
+  
   public String deleteFlight(){
-        try {
-            DriverManager.registerDriver(
-                    new org.apache.derby.jdbc.ClientDriver());
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
-
-            PreparedStatement stmt = con.prepareStatement("DELETE FROM FLIGHTS WHERE FLIGHTNUMBER = ?");
-
-            stmt.setInt(1, flightNumber);
-            stmt.executeUpdate();
-
     try {
       DriverManager.registerDriver(
               new org.apache.derby.jdbc.ClientDriver());
-      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
+      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
+      PreparedStatement stmt = con.prepareStatement("DELETE FROM FLIGHTS WHERE FLIGHTNUMBER = ?");
 
-            stmt.close();
-            con.close();
+      stmt.setInt(1, flightNumber);
+      stmt.executeUpdate();
 
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-        return "adminpanel";
+      stmt.close();
+      con.close();
     }
-  public String updateFlight(){
+    catch (SQLException e) {
+        System.out.println(e);
+    }
+
+      return "adminpanel";
+  }
+  
+  public String updateFlight() {
         try {
             DriverManager.registerDriver(
                     new org.apache.derby.jdbc.ClientDriver());

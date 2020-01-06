@@ -6,113 +6,106 @@ import java.sql.Time;
 public class FlightDTO {
  
 private int flightID;
-private int flightNumber;
+private String flightNumber;
 private String flightCompany;
 private String cityCode;
 private double price;
-private String departureTime;
-private String arrivalTime;
-private String cancelationDeadline;
-private int adminID;
-private String country;
+private String departureLocation;
+private String arrivalDestination;
+private Time departureTime;
+private Time arrivalTime;
+private Date cancelationDeadline;
 
-    public FlightDTO(int flightID, int flightNumber, String flightCompany, String cityCode, double price, String departureTime, String arrivalTime, String cancelationDeadline, int adminID, String country) {
-        this.flightID = flightID;
-        this.flightNumber = flightNumber;
-        this.flightCompany = flightCompany;
-        this.cityCode = cityCode;
-        this.price = price;
-        this.departureTime = departureTime;
-        this.arrivalTime = arrivalTime;
-        this.cancelationDeadline = cancelationDeadline;
-        this.adminID = adminID;
-        this.country = country;
-    }
+  public FlightDTO(int flightID, String flightNumber, String flightCompany, String cityCode, double price, String departureLocation, String arrivalDestination, Time departureTime, Time arrivalTime, Date cancelationDeadline) {
+    this.flightID = flightID;
+    this.flightNumber = flightNumber;
+    this.flightCompany = flightCompany;
+    this.cityCode = cityCode;
+    this.price = price;
+    this.departureLocation = departureLocation;
+    this.arrivalDestination = arrivalDestination;
+    this.departureTime = departureTime;
+    this.arrivalTime = arrivalTime;
+    this.cancelationDeadline = cancelationDeadline;
+  }
 
-    public int getFlightID() {
-        return flightID;
-    }
+  public int getFlightID() {
+    return flightID;
+  }
 
-    public int getFlightNumber() {
-        return flightNumber;
-    }
+  public String getFlightNumber() {
+    return flightNumber;
+  }
 
-    public String getFlightCompany() {
-        return flightCompany;
-    }
+  public String getFlightCompany() {
+    return flightCompany;
+  }
 
-    public String getCityCode() {
-        return cityCode;
-    }
+  public String getCityCode() {
+    return cityCode;
+  }
 
-    public double getPrice() {
-        return price;
-    }
+  public double getPrice() {
+    return price;
+  }
 
-    public String getDepartureTime() {
-        return departureTime;
-    }
+  public String getDepartureLocation() {
+    return departureLocation;
+  }
 
-    public String getArrivalTime() {
-        return arrivalTime;
-    }
+  public String getArrivalDestination() {
+    return arrivalDestination;
+  }
 
-    public String getCancelationDeadline() {
-        return cancelationDeadline;
-    }
+  public Time getDepartureTime() {
+    return departureTime;
+  }
 
-    public int getAdminID() {
-        return adminID;
-    }
+  public Time getArrivalTime() {
+    return arrivalTime;
+  }
 
-    public String getCountry()
-    {
-        return country;
-    }
-    
-    public void setFlightID(int flightID) {
-        this.flightID = flightID;
-    }
+  public Date getCancelationDeadline() {
+    return cancelationDeadline;
+  }
 
-    public void setFlightNumber(int flightNumber) {
-        this.flightNumber = flightNumber;
-    }
+  public void setFlightID(int flightID) {
+    this.flightID = flightID;
+  }
 
-    public void setFlightCompany(String flightCompany) {
-        this.flightCompany = flightCompany;
-    }
+  public void setFlightNumber(String flightNumber) {
+    this.flightNumber = flightNumber;
+  }
 
-    public void setCityCode(String cityCode) {
-        this.cityCode = cityCode;
-    }
+  public void setFlightCompany(String flightCompany) {
+    this.flightCompany = flightCompany;
+  }
 
-    public void setPrice(double price) {
-        this.price = price;
-    }
+  public void setCityCode(String cityCode) {
+    this.cityCode = cityCode;
+  }
 
-    public void setDepartureTime(String departureTime) {
-        this.departureTime = departureTime;
-    }
+  public void setPrice(double price) {
+    this.price = price;
+  }
 
-    public void setArrivalTime(String arrivalTime) {
-        this.arrivalTime = arrivalTime;
-    }
+  public void setDepartureLocation(String departureLocation) {
+    this.departureLocation = departureLocation;
+  }
 
-    public void setCancelationDeadline(String cancelationDeadline) {
-        this.cancelationDeadline = cancelationDeadline;
-    }
+  public void setArrivalDestination(String arrivalDestination) {
+    this.arrivalDestination = arrivalDestination;
+  }
 
-    public void setAdminID(int adminID) {
-        this.adminID = adminID;
-    }
+  public void setDepartureTime(Time departureTime) {
+    this.departureTime = departureTime;
+  }
 
-    public void setCountry(String country)
-    {
-        this.country = country;
-    }
-    
-    
-    
+  public void setArrivalTime(Time arrivalTime) {
+    this.arrivalTime = arrivalTime;
+  }
 
-
+  public void setCancelationDeadline(Date cancelationDeadline) {
+    this.cancelationDeadline = cancelationDeadline;
+  }
 }

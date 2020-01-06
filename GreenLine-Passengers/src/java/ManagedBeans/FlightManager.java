@@ -14,7 +14,6 @@ import java.sql.Time;
 import java.sql.Date;
 import java.util.ArrayList;
 import DTOS.FlightDTO;
-import org.apache.derby.client.am.DateTime;
 //Managed bean scopes
 
 @Named(value = "flightManager")
@@ -97,9 +96,8 @@ public class FlightManager implements Serializable {
   public void setAdminID(int adminID) {
     this.adminID = adminID;
   }
-  
-  //Methods
 
+  //Methods
   public ArrayList<FlightDTO> fetchFlights() {
     ArrayList<FlightDTO> flightList = new ArrayList<>();
 
@@ -112,42 +110,37 @@ public class FlightManager implements Serializable {
 
       ResultSet rs = stmt.executeQuery();
 
-      while (rs.next()) 
-      {
-        FlightDTO  flights = new FlightDTO(
-          rs.getInt("FLIGHTID"),
-          rs.getInt("FLIGHTNUMBER"),
-          rs.getString("FLIGHTCOMPANY"),
-          rs.getString("CITY"),
-          rs.getDouble("Price"),
-          rs.getString("DEPARTURETIME"),
-          rs.getString("ARRIVALTIME"),
-          rs.getString("CANCELLATIONDATE"),
-          rs.getInt("ADMINID"),
-          rs.getString("COUNTRY")
+      while (rs.next()) {
+        FlightDTO flights = new FlightDTO(
+                rs.getInt("FLIGHTID"),
+                rs.getString("FLIGHTNUMBER"),
+                rs.getString("FLIGHTCOMPANY"),
+                rs.getString("CITYCODE"),
+                rs.getDouble("PRICE"),
+                rs.getString("DEPARTURELOCATION"),
+                rs.getString("ARRIVALDESTINATION"),
+                rs.getTime("DEPARTURETIME"),
+                rs.getTime("ARRIVALTIME"),
+                rs.getDate("CANCELLATIONDATE")
         );
         flightList.add(flights);
       }
 
-      stmt.execute();
       rs.close();
-
       stmt.close();
       con.close();
 
     } catch (SQLException e) {
-      System.out.println(e);
+      e.printStackTrace();
     }
-
     return flightList;
-
   }
 
   public String addFlight() {
     try {
       DriverManager.registerDriver(
               new org.apache.derby.jdbc.ClientDriver());
-      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
 
       PreparedStatement stmt = con.prepareStatement("INSERT INTO FLIGHTS (FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, COUNTRY, PRICE) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
@@ -169,58 +162,53 @@ public class FlightManager implements Serializable {
     }
     return "adminpanel";
   }
-  public String deleteFlight(){
-        try {
-            DriverManager.registerDriver(
-                    new org.apache.derby.jdbc.ClientDriver());
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("DELETE FROM FLIGHTS WHERE FLIGHTNUMBER = ?");
+  public String deleteFlight() {
+    try {
+      DriverManager.registerDriver(
+              new org.apache.derby.jdbc.ClientDriver());
+      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
 
-            stmt.setInt(1, flightNumber);
-            stmt.executeUpdate();
+      PreparedStatement stmt = con.prepareStatement("DELETE FROM FLIGHTS WHERE FLIGHTNUMBER = ?");
 
+      stmt.setInt(1, flightNumber);
+      stmt.executeUpdate();
 
+      stmt.close();
+      con.close();
 
-
-
-            stmt.close();
-            con.close();
-
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-        return "adminpanel";
+    } catch (SQLException e) {
+      System.out.println(e);
     }
-  public String updateFlight(){
-        try {
-            DriverManager.registerDriver(
-                    new org.apache.derby.jdbc.ClientDriver());
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+    return "adminpanel";
+  }
 
-            PreparedStatement stmt = con.prepareStatement("UPDATE FLIGHTS " + "FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, COUNTRY, PRICE");
+  public String updateFlight() {
+    try {
+      DriverManager.registerDriver(
+              new org.apache.derby.jdbc.ClientDriver());
+      Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
 
-                  stmt.setInt(1, flightNumber);
-        stmt.setString(2, flightCompany);
-        stmt.setString(3, city);
-        stmt.setString(4, departureTime);
-        stmt.setString(5, arrivalTime);
-        stmt.setString(6, country);
-        stmt.setDouble(7, price);
-            stmt.executeUpdate();
+      PreparedStatement stmt = con.prepareStatement("UPDATE FLIGHTS " + "FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, COUNTRY, PRICE");
 
+      stmt.setInt(1, flightNumber);
+      stmt.setString(2, flightCompany);
+      stmt.setString(3, city);
+      stmt.setString(4, departureTime);
+      stmt.setString(5, arrivalTime);
+      stmt.setString(6, country);
+      stmt.setDouble(7, price);
 
+      stmt.executeUpdate();
 
+      stmt.close();
+      con.close();
 
-
-            stmt.close();
-            con.close();
-
-        } catch (SQLException e) {
-            System.out.println(e);
-        }
-        return "adminpanel";
+    } catch (SQLException e) {
+      System.out.println(e);
     }
+    return "adminpanel";
+  }
 
   public String getCity() {
     return city;

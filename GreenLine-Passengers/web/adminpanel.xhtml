@@ -20,7 +20,7 @@
             <h:link value="Update Flights" outcome="updateflights" />
             <h:commandButton action="#{admin.logout}" class="button" value="Delete flight"></h:commandButton>
           </div>
-          <h:commandButton action="view-flights" class="altLink" value="View all flights"></h:commandButton>
+          <h:commandButton action="view-flights?faces-redirect=true" class="altLink" value="View all flights"></h:commandButton>
         </div>
       </h:form>
       

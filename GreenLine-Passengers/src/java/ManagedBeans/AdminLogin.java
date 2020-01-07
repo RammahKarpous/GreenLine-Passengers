@@ -1,24 +1,19 @@
 package ManagedBeans;
 
 import java.io.Serializable;
-import java.sql.Date;
-import java.sql.Time;
-import java.util.ArrayList;
-import java.util.HashMap;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 @Named(value="admin")
 @SessionScoped
-public class Admin_UI  implements Serializable
+public class AdminLogin  implements Serializable
 {
     private String username;
     private String password;
 
-    public Admin_UI()
+    public AdminLogin()
     {
         clearFields();
         

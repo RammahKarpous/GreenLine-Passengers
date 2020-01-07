@@ -59,7 +59,7 @@ public class BookingManager implements Serializable{
                 try {
             DriverManager.registerDriver(
                     new org.apache.derby.jdbc.ClientDriver());
-            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
             PreparedStatement stmt = con.prepareStatement("INSERT INTO BOOKINGS (CLASS, FLIGHTID, PERSONID, TYPE) VALUES (?, ?, (SELECT userid FROM user WHERE loggedin = true), ?)");
             stmt.setString(1, classType);

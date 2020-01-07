@@ -67,7 +67,7 @@ public class UserManager
             {
                 DriverManager.registerDriver(
                         new org.apache.derby.jdbc.ClientDriver());
-                Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database1", "admin1", "admin1");
+                Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
                 PreparedStatement stmt = con.prepareStatement("INSERT INTO USERS ( EMAIL, PASSWORD ) VALUES ( ?, ? )");
                 stmt.setString(1, email);

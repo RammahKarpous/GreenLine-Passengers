@@ -4,9 +4,7 @@ import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 import javax.enterprise.context.SessionScoped;
 import javax.inject.Named;
 
@@ -17,53 +15,49 @@ import javax.inject.Named;
 public class CustomerManager implements Serializable {
 
     //Attributes
-    private int personID;
-    private int userID;
+    private int customerID;
     private String firstName;
     private String middleName;
     private String surName;
+    private String dob;
     private String passportNumber;
-    private int contactNumber;
-    private int emergencyContactNumber;
+    private String contactNumber;
+    private String emergencyContactNumber;
     private String gender;
     private String country;
     private String city;
-    private String password;
+    private int userID;
 
 //Getters and setters
-    public String getMiddleName() {
-        return middleName;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public int getPersonID() {
-        return personID;
-    }
-
-    public int getUserID() {
-        return userID;
+    public int getCustomerID() {
+        return customerID;
     }
 
     public String getFirstName() {
         return firstName;
     }
 
+    public String getMiddleName() {
+        return middleName;
+    }
+
     public String getSurName() {
         return surName;
+    }
+
+    public String getDob() {
+        return dob;
     }
 
     public String getPassportNumber() {
         return passportNumber;
     }
 
-    public int getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public int getEmergencyContactNumber() {
+    public String getEmergencyContactNumber() {
         return emergencyContactNumber;
     }
 
@@ -74,36 +68,44 @@ public class CustomerManager implements Serializable {
     public String getCountry() {
         return country;
     }
-
-    public String getPassword() {
-        return password;
+    
+    public int getUserID() {
+        return userID;
     }
 
-    public void setPersonID(int personID) {
-        this.personID = personID;
+    public String getCity() {
+        return city;
     }
 
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
     }
 
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    public void setMiddleName(String middleName) {
+        this.middleName = middleName;
+    }
+
     public void setSurName(String surName) {
         this.surName = surName;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
     }
 
     public void setPassportNumber(String passportNumber) {
         this.passportNumber = passportNumber;
     }
 
-    public void setContactNumber(int contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 
-    public void setEmergencyContactNumber(int emergencyContactNumber) {
+    public void setEmergencyContactNumber(String emergencyContactNumber) {
         this.emergencyContactNumber = emergencyContactNumber;
     }
 
@@ -115,35 +117,33 @@ public class CustomerManager implements Serializable {
         this.country = country;
     }
 
-    public void setMiddleName(String middleName) {
-        this.middleName = middleName;
-    }
-
     public void setCity(String city) {
         this.city = city;
     }
-
-    public void setPassword(String password) {
-        this.password = password;
+    
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
 //Methods
-
     public String addCustomerToDB() {
         try {
             DriverManager.registerDriver(
                     new org.apache.derby.jdbc.ClientDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO PERSON (FIRSTNAME, MIDDLENAME, SURNAME, PASSPORTNUMBER, EMERGANCYCONTACT, COUNTRY, CITY, TELEPHONE, USERID ) VALUES (?, ?, ?, ?, ?, ?, ?, ?,(SELECT MAX(USERID) FROM USERS))");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO CUSTOMER (FIRSTNAME, MIDDLENAME, SURNAME, DOB, PASSPORTNUMBER, CONTACTNUMBER, EMERGENCYCONTACTNUMBER, GENDER, COUNTRY, CITY ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
             stmt.setString(1, firstName);
             stmt.setString(2, middleName);
             stmt.setString(3, surName);
-            stmt.setString(4, passportNumber);
-            stmt.setInt(5, emergencyContactNumber);
-            stmt.setString(6, country);
-            stmt.setString(7, city);
-            stmt.setInt(8, contactNumber);
+            stmt.setString(4, dob);
+            stmt.setString(5, passportNumber);
+            stmt.setString(6, contactNumber);
+            stmt.setString(7, emergencyContactNumber);
+            stmt.setString(8, gender);
+            stmt.setString(9, country);
+            stmt.setString(10, city);
+            stmt.setInt(11, userID);
 
             stmt.execute();
 
@@ -151,9 +151,8 @@ public class CustomerManager implements Serializable {
             con.close();
 
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
-
         return "index";
     }
 }

@@ -2,27 +2,22 @@ package DTOS;
 
 import java.sql.Date;
 
-
 public class CustomerDTO {
-    
-    private int personID;
-    private int userID;
+
+    private int customerID;
     private String firstName;
     private String middleName;
     private String surName;
-    private Date dob;
+    private String dob;
     private String passportNumber;
-    private int contactNumber;
-    private int emergencyContactNumber;
+    private String contactNumber;
+    private String emergencyContactNumber;
     private String gender;
     private String country;
-    private String email;
     private String city;
-    private String password;
 
-    public CustomerDTO(int personID, int userID, String firstName, String middleName, String surName, Date dob, String passportNumber, int contactNumber, int emergencyContactNumber, String gender, String country, String email, String city, String password) {
-        this.personID = personID;
-        this.userID = userID;
+    public CustomerDTO(int personID, String firstName, String middleName, String surName, String dob, String passportNumber, String contactNumber, String emergencyContactNumber, String gender, String country, String city) {
+        this.customerID = personID;
         this.firstName = firstName;
         this.middleName = middleName;
         this.surName = surName;
@@ -32,17 +27,11 @@ public class CustomerDTO {
         this.emergencyContactNumber = emergencyContactNumber;
         this.gender = gender;
         this.country = country;
-        this.email = email;
         this.city = city;
-        this.password = password;
     }
 
-    public int getPersonID() {
-        return personID;
-    }
-
-    public int getUserID() {
-        return userID;
+    public int getCustomerID() {
+        return customerID;
     }
 
     public String getFirstName() {
@@ -57,7 +46,7 @@ public class CustomerDTO {
         return surName;
     }
 
-    public Date getDob() {
+    public String getDob() {
         return dob;
     }
 
@@ -65,11 +54,11 @@ public class CustomerDTO {
         return passportNumber;
     }
 
-    public int getContactNumber() {
+    public String getContactNumber() {
         return contactNumber;
     }
 
-    public int getEmergencyContactNumber() {
+    public String getEmergencyContactNumber() {
         return emergencyContactNumber;
     }
 
@@ -81,24 +70,12 @@ public class CustomerDTO {
         return country;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
     public String getCity() {
         return city;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPersonID(int personID) {
-        this.personID = personID;
-    }
-
-    public void setUserID(int userID) {
-        this.userID = userID;
+    public void setCustomerID(int customerID) {
+        this.customerID = customerID;
     }
 
     public void setFirstName(String firstName) {
@@ -113,7 +90,7 @@ public class CustomerDTO {
         this.surName = surName;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(String dob) {
         this.dob = dob;
     }
 
@@ -121,11 +98,11 @@ public class CustomerDTO {
         this.passportNumber = passportNumber;
     }
 
-    public void setContactNumber(int contactNumber) {
+    public void setContactNumber(String contactNumber) {
         this.contactNumber = contactNumber;
     }
 
-    public void setEmergencyContactNumber(int emergencyContactNumber) {
+    public void setEmergencyContactNumber(String emergencyContactNumber) {
         this.emergencyContactNumber = emergencyContactNumber;
     }
 
@@ -137,18 +114,7 @@ public class CustomerDTO {
         this.country = country;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
     public void setCity(String city) {
         this.city = city;
     }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
-    
-    
 }

@@ -34,7 +34,7 @@
         <from-view-id>/adminlogin.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>loginOK</from-outcome>
-            <to-view-id>/adminpanel.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
         <navigation-rule>
@@ -45,7 +45,7 @@
         </navigation-case>
     </navigation-rule>
     <navigation-rule>
-        <from-view-id>/adminpanel.xhtml</from-view-id>
+        <from-view-id>/admin.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>logout</from-outcome>
             <to-view-id>/index.xhtml</to-view-id>
@@ -55,7 +55,7 @@
         <from-view-id>/add-flight.xhtml</from-view-id>
         <navigation-case>
             <from-outcome>addflight</from-outcome>
-            <to-view-id>/adminpanel.xhtml</to-view-id>
+            <to-view-id>/admin.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
 </faces-config>

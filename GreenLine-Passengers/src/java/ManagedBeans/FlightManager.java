@@ -173,7 +173,7 @@ public class FlightManager implements Serializable {
                     new org.apache.derby.jdbc.ClientDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("UPDATE FLIGHTS SET FLIGHTNUMBER = ?, FLIGHTCOMPANY = ?, CITY = ?, DEPARTURETIME = ?, ARRIVALTIME = ?, PRICE = ? WHERE FLIGHTNUMBER = ?");
+            PreparedStatement stmt = con.prepareStatement("UPDATE FLIGHTS SET FLIGHTNUMBER = ?, FLIGHTCOMPANY = ?, CITY = ?, DEPARTURETIME = ?, ARRIVALTIME = ?, PRICE = ?, CANCELLATIONDATE = ? WHERE FLIGHTID = ?");
 
             stmt.setString(1, flightNumber);
             stmt.setString(2, flightCompany);
@@ -181,7 +181,8 @@ public class FlightManager implements Serializable {
             stmt.setString(4, departureTime);
             stmt.setString(5, arrivalTime);
             stmt.setDouble(6, price);
-            stmt.setInt(7, flightID);
+            stmt.setString(7, "00/00/0000");
+            stmt.setInt(8, flightID);
             stmt.executeUpdate();
 
             stmt.close();

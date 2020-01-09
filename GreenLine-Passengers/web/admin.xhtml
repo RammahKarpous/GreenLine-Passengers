@@ -16,7 +16,7 @@
         <div class="actions">
           <div>
             <h:link class="button" value="Add flight" outcome="add-flight" />
-            <h:commandButton action="#{login.logout}" class="button" value="View flight details"></h:commandButton>
+            <h:commandButton action="flightdetails" class="button" value="View flight details"></h:commandButton>
             <h:commandButton action="updateflight" class="button" value="Amend flight"></h:commandButton>
             <h:commandButton action="deleteflights" class="button" value="Delete flight"></h:commandButton>
           </div>
@@ -29,15 +29,15 @@
         
         <div class="user-actions">
           <div class="user-info">
-            <h:outputText class="numbers" value="343,298" />
+              <h:outputText class="numbers" value="#{bookingManager.fetchBookings().size()}" />
             <h:outputText class="words" value="Bookings made" />
             <h:commandButton action="#{login.logout}" class="button" value="View bookings"></h:commandButton>
           </div>
           
           <div class="user-info">
-            <h:outputText class="numbers" value="34,082,374" />
+              <h:outputText class="numbers" value="#{userManager.fetchUsers().size()}" />
             <h:outputText class="words" value="Users registered" />
-            <h:commandButton action="#{login.logout}" class="button" value="View customers"></h:commandButton>
+            <h:commandButton action="viewcustomers.xhtml" class="button" value="View customers"></h:commandButton>
           </div>
         </div>
         

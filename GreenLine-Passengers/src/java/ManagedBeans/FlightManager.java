@@ -144,7 +144,7 @@ public class FlightManager implements Serializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return "adminpanel";
+        return "admin";
     }
 
     public String deleteFlight() {
@@ -164,7 +164,7 @@ public class FlightManager implements Serializable {
             e.printStackTrace();
         }
 
-        return "adminpanel";
+        return "admin";
     }
 
     public String updateFlight() {
@@ -191,7 +191,37 @@ public class FlightManager implements Serializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return "adminpanel";
+        return "admin";
+    }
+
+    public void flightDetails() {
+        try {
+            DriverManager.registerDriver(
+                    new org.apache.derby.jdbc.ClientDriver());
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM FLIGHTS WHERE FLIGHTID = ?");
+
+            stmt.setInt(1, flightID);
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                this.flightID = rs.getInt("FLIGHTID");
+                this.flightNumber = rs.getString("FLIGHTNUMBER");
+                this.flightCompany = rs.getString("FLIGHTCOMPANY");
+                this.city = rs.getString("CITY");
+                this.price = rs.getDouble("PRICE");
+                this.departureTime = rs.getString("DEPARTURETIME");
+                this.arrivalTime = rs.getString("ARRIVALTIME");
+            }
+
+            stmt.close();
+            con.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
 }

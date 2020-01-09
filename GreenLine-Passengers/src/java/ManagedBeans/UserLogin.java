@@ -46,6 +46,7 @@ public class UserLogin implements Serializable {
 
     public boolean userLogin() {
         boolean credentialsOK = false;
+
         try {
             DriverManager.registerDriver(
                     new org.apache.derby.jdbc.ClientDriver());
@@ -59,7 +60,7 @@ public class UserLogin implements Serializable {
 
             while (rs.next()) {
                 credentialsOK = rs.getString("PASSWORD").equals(password);
-                if (credentialsOK = true) {
+                if (credentialsOK == true) {
                     currentCustomer = rs.getInt("USERID");
                 }
             }
@@ -77,10 +78,10 @@ public class UserLogin implements Serializable {
     }
 
     public String logout() {
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         this.email = "";
         this.password = "";
         this.currentCustomer = 0;
-        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
         return "logout";
     }
 }

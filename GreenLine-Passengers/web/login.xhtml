@@ -12,7 +12,7 @@ and open the template in the editor.
 
     <h:body>
         <ui:composition template="resources/templates/template.xhtml">
-          <ui:define name="title">GreenLile Passenger | Login</ui:define>
+          <ui:define name="title">GreenLine Passenger | Login</ui:define>
             <ui:define name="content">
               <div  class="wrapper form-wrapper login">
                 <div class="logoImg">
@@ -25,13 +25,13 @@ and open the template in the editor.
                 <h:form>
                   <div class="inputField">
                     <label for="email"><h:outputText value ="Email"/></label>
-                    <h:inputText id="email" value="#{userLogin.email}"/>
+                    <h:inputText id="email" value="#{userLogin.email}" />
                     <h:message for="email"/>
                   </div>
 
                   <div class="inputField">
                       <h:outputText value ="Password"/>
-                      <h:inputSecret id="password" value="#{userLogin.password}"/>
+                      <h:inputSecret id="password" value="#{userLogin.password}" />
                       <h:message for="password"/>
                   </div>
 

@@ -1,10 +1,13 @@
 package ManagedBeans;
 //Imports
+import DTOS.BookingDTO;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
 //Managed Bean properties
@@ -61,10 +64,11 @@ public class BookingManager implements Serializable{
                     new org.apache.derby.jdbc.ClientDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO BOOKINGS (CLASS, FLIGHTID, PERSONID, TYPE) VALUES (?, ?, (SELECT userid FROM user WHERE loggedin = true), ?)");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO BOOKING (CLASSTYPE, FLIGHTID, PERSONID, TYPE) VALUES (?, ?, ?, ?)");
             stmt.setString(1, classType);
             stmt.setInt(2, flightID);
-            stmt.setString(3, type);
+            stmt.setInt(3, personID);
+            stmt.setString(4, type);
             
              stmt.execute();
        
@@ -72,8 +76,43 @@ public class BookingManager implements Serializable{
             con.close();
             
         } catch (SQLException e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return "userpanel";
 }
+    
+    public ArrayList<BookingDTO> fetchBookings() {
+        ArrayList<BookingDTO> bookingList = new ArrayList<>();
+
+        try {
+            DriverManager.registerDriver(
+                    new org.apache.derby.jdbc.ClientDriver());
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM BOOKING");
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                BookingDTO booking = new BookingDTO(
+                        rs.getInt("BOOKINGID"),
+                        rs.getString("CLASSTYPE"),
+                        rs.getInt("FLIGHTID"),
+                        rs.getInt("PERSONID"),
+                        rs.getString("TYPE")
+                );
+                bookingList.add(booking);
+            }
+
+            stmt.execute();
+
+            rs.close();
+            stmt.close();
+            con.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return bookingList;
+    }
 }

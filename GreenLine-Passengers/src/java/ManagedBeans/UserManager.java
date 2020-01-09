@@ -1,9 +1,12 @@
 package ManagedBeans;
 
+import DTOS.UserDTO;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import javax.inject.Named;
 import javax.enterprise.context.RequestScoped;
 
@@ -63,5 +66,38 @@ public class UserManager {
             this.userID = 0;
         }
         return "register";
+    }
+    
+        public ArrayList<UserDTO> fetchUsers() {
+        ArrayList<UserDTO> userList = new ArrayList<>();
+
+        try {
+            DriverManager.registerDriver(
+                    new org.apache.derby.jdbc.ClientDriver());
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+
+            PreparedStatement stmt = con.prepareStatement("SELECT * FROM USERS");
+
+            ResultSet rs = stmt.executeQuery();
+
+            while (rs.next()) {
+                UserDTO user = new UserDTO(
+                        rs.getInt("USERID"),
+                        rs.getString("EMAIL"),
+                        rs.getString("PASSWORD")
+                );
+                userList.add(user);
+            }
+
+            stmt.execute();
+
+            rs.close();
+            stmt.close();
+            con.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
     }
 }

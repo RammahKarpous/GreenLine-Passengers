@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+
+    <h:body>
+        <ui:composition template="resources/templates/logged-in-template.xhtml">
+            <ui:define name="title">Book flight</ui:define>
+            <ui:define name="content">
+                <div class="wrapper form-wrapper add-flight">
+                    <h1>Book flight</h1>
+                    <h:form enctype="multipart/form-data">
+                        <div class="three-in-a-row">
+
+                            <div class="inputField">
+                                <label for="flightID"><h:outputText value ="flightID"/></label>
+                                <h:selectOneMenu value="#{bookingManager.flightID}">
+                                    <f:selectItems value="#{flightManager.fetchFlights()}" var="flight" itemLabel="#{flight.flightNumber}" itemValue="#{flight.flightID}" />
+                                </h:selectOneMenu>
+                                <h:message for="flightID"/>
+                            </div>
+
+                            <div class="inputField">
+                                <label for="personID"><h:outputText value="personID" /></label>
+                                <h:selectOneMenu value="#{bookingManager.personID}">
+                                    <f:selectItem itemLabel="current user" itemValue="#{userLogin.currentCustomer}" />
+                                </h:selectOneMenu>
+                                <h:message for="personID"/>
+                            </div>
+
+                            <div class="inputField">
+                                <label for="classType"><h:outputText value ="Class type"/></label>
+                                <h:selectOneMenu value="#{bookingManager.classType}">
+                                    <f:selectItem itemLabel="First class" itemValue="First class" />
+                                    <f:selectItem itemLabel="Business class" itemValue="Business class" />
+                                    <f:selectItem itemLabel="Economy plus class" itemValue="Economy plus class" />
+                                    <f:selectItem itemLabel="Economy class" itemValue="Economy class" />
+                                </h:selectOneMenu>
+                                <h:message for="classType"/>
+                            </div>
+                        </div>
+
+                        <div class="two-in-a-row">
+
+                            <div class="two-in-a-row">
+                                <div class="inputField">
+                                    <label for="Type"><h:outputText value="Type" /></label>
+                                    <h:selectOneMenu value="#{bookingManager.type}">
+                                        <f:selectItem itemLabel="One way" itemValue="One way" />
+                                        <f:selectItem itemLabel="Return" itemValue="Return" />
+                                    </h:selectOneMenu>
+                                    <h:message for="Type"/>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                        <div class="inputField">
+                            <h:commandButton action="#{bookingManager.createBookFlight()}" class="button" value="Add booking"/>
+                        </div>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

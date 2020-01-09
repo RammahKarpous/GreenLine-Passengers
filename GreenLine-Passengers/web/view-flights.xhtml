@@ -11,13 +11,6 @@
             <ui:define name="title">All flights</ui:define>
             <ui:define name="content">
                 <h1>All flights</h1>
-                <h:outputText value="#{flightManager.fetchFlights().size()}" />
-                <h:dataTable value="#{flightManager.fetchFlights()}" var="flights" >
-                    <h:column>
-                        <f:facet name="header">Number</f:facet>
-                        <h:outputText value="#{flights.flightNumber}" />
-                    </h:column>
-                </h:dataTable>
 
                 <ui:repeat value="#{flightManager.fetchFlights()}" var="flight" >
                     <div class="flight-wrapper">
@@ -34,7 +27,7 @@
                                 <!-- departure time and location -->
                                 <div class="flight">
                                     <h:outputText class="flight-time" value="#{flight.departureTime}" />
-                                    <h:outputText class="flight-location" value="#{flight.cityCode}" />
+                                    <h:outputText class="flight-location" value="#{flight.city}" />
                                 </div>
 
                                 <!-- flight duration -->
@@ -45,7 +38,7 @@
                                 <!-- return flight time and location -->
                                 <div class="flight">
                                     <h:outputText class="flight-time" value="#{flight.arrivalTime}" />
-                                    <h:outputText class="flight-location" value="#{flight.cityCode}" />
+                                    <h:outputText class="flight-location" value="#{flight.city}" />
                                 </div>
                             </div>
 

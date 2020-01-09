@@ -17,8 +17,8 @@
           <div>
             <h:link class="button" value="Add flight" outcome="add-flight" />
             <h:commandButton action="#{login.logout}" class="button" value="View flight details"></h:commandButton>
-            <h:commandButton action="#{login.logout}" class="button" value="Amend flight"></h:commandButton>
-            <h:commandButton action="#{login.logout}" class="button" value="Delete flight"></h:commandButton>
+            <h:commandButton action="updateflight" class="button" value="Amend flight"></h:commandButton>
+            <h:commandButton action="deleteflights" class="button" value="Delete flight"></h:commandButton>
           </div>
           <h:commandLink action="view-flights" class="altLink" value="View all flights"></h:commandLink>
         </div>

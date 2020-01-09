@@ -6,7 +6,7 @@ import java.sql.Time;
 public class FlightDTO {
 
     private int flightID;
-    private int flightNumber;
+    private String flightNumber;
     private String flightCompany;
     private String city;
     private double price;
@@ -14,7 +14,7 @@ public class FlightDTO {
     private String arrivalTime;
     private String cancelationDeadline;
 
-    public FlightDTO(int flightID, int flightNumber, String flightCompany, String city, double price, String departureTime, String arrivalTime, String cancelationDeadline) {
+    public FlightDTO(int flightID, String flightNumber, String flightCompany, String city, double price, String departureTime, String arrivalTime, String cancelationDeadline) {
         this.flightID = flightID;
         this.flightNumber = flightNumber;
         this.flightCompany = flightCompany;
@@ -29,7 +29,7 @@ public class FlightDTO {
         return flightID;
     }
 
-    public int getFlightNumber() {
+    public String getFlightNumber() {
         return flightNumber;
     }
 
@@ -61,7 +61,7 @@ public class FlightDTO {
         this.flightID = flightID;
     }
 
-    public void setFlightNumber(int flightNumber) {
+    public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
     }
 

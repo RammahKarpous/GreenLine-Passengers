@@ -1,8 +1,8 @@
-//Package 
 package ManagedBeans;
-//Import packages
 
+import DTOS.FlightDTO;
 import javax.inject.Named;
+import javax.enterprise.context.SessionScoped;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,18 +10,15 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import DTOS.FlightDTO;
-import javax.enterprise.context.RequestScoped;
-//Managed bean scopes
 
 @Named(value = "flightManager")
-@RequestScoped
-//Class
-public class FlightManager implements Serializable {
-//Attributes
+@SessionScoped
 
+public class FlightManager implements Serializable {
+
+//Attributes
     private int flightID;
-    private int flightNumber;
+    private String flightNumber;
     private String flightCompany;
     private String city;
     private double price;
@@ -37,11 +34,11 @@ public class FlightManager implements Serializable {
         this.flightID = flightID;
     }
 
-    public int getFlightNumber() {
+    public String getFlightNumber() {
         return flightNumber;
     }
 
-    public void setFlightNumber(int flightNumber) {
+    public void setFlightNumber(String flightNumber) {
         this.flightNumber = flightNumber;
     }
 
@@ -101,7 +98,7 @@ public class FlightManager implements Serializable {
             while (rs.next()) {
                 FlightDTO flights = new FlightDTO(
                         rs.getInt("FLIGHTID"),
-                        rs.getInt("FLIGHTNUMBER"),
+                        rs.getString("FLIGHTNUMBER"),
                         rs.getString("FLIGHTCOMPANY"),
                         rs.getString("CITY"),
                         rs.getDouble("PRICE"),
@@ -130,15 +127,15 @@ public class FlightManager implements Serializable {
                     new org.apache.derby.jdbc.ClientDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO FLIGHTS (FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, PRICE) VALUES (?, ?, ?, ?, ?, ?)");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO FLIGHTS (FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, PRICE, CANCELLATIONDATE) VALUES (?, ?, ?, ?, ?, ?, ?)");
 
-            stmt.setInt(1, flightNumber);
+            stmt.setString(1, flightNumber);
             stmt.setString(2, flightCompany);
             stmt.setString(3, city);
             stmt.setString(4, departureTime);
             stmt.setString(5, arrivalTime);
             stmt.setDouble(6, price);
-
+            stmt.setString(7, "00/00/0000");
             stmt.execute();
 
             stmt.close();
@@ -158,7 +155,7 @@ public class FlightManager implements Serializable {
 
             PreparedStatement stmt = con.prepareStatement("DELETE FROM FLIGHTS WHERE FLIGHTNUMBER = ?");
 
-            stmt.setInt(1, flightNumber);
+            stmt.setString(1, flightNumber);
             stmt.executeUpdate();
 
             stmt.close();
@@ -176,14 +173,15 @@ public class FlightManager implements Serializable {
                     new org.apache.derby.jdbc.ClientDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("UPDATE FLIGHTS FLIGHTNUMBER, FLIGHTCOMPANY, CITY, DEPARTURETIME, ARRIVALTIME, PRICE");
+            PreparedStatement stmt = con.prepareStatement("UPDATE FLIGHTS SET FLIGHTNUMBER = ?, FLIGHTCOMPANY = ?, CITY = ?, DEPARTURETIME = ?, ARRIVALTIME = ?, PRICE = ? WHERE FLIGHTNUMBER = ?");
 
-            stmt.setInt(1, flightNumber);
+            stmt.setString(1, flightNumber);
             stmt.setString(2, flightCompany);
             stmt.setString(3, city);
             stmt.setString(4, departureTime);
             stmt.setString(5, arrivalTime);
             stmt.setDouble(6, price);
+            stmt.setInt(7, flightID);
             stmt.executeUpdate();
 
             stmt.close();
@@ -194,4 +192,5 @@ public class FlightManager implements Serializable {
         }
         return "adminpanel";
     }
+
 }

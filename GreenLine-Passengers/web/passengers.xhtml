@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:body>
+        <ui:composition template="resources/templates/template.xhtml">
+            <ui:define name="content">
+                <div class="wrapper form-wrapper register">
+                    <h1>Register</h1>
+                    <h:form>
+                        <div class="inputField">
+                            <label for="userID"><h:outputText value ="UserID"/></label>
+                            <h:selectOneMenu id="userID" value="#{customerManager.userID}">
+                                <f:selectItems var="user" itemValue="#{userManager.userID}" itemLabel="#{userManager.email}" />
+                            </h:selectOneMenu>
+                            <h:message for="gender"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="firstName"><h:outputText value ="First name: "/></label>
+                            <h:inputText id="firstName" value="#{customerManager.firstName}"/>
+                            <h:message for="firstName"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="middleName"><h:outputText value ="Middle name"/></label>
+                            <h:inputText id="middleName" value="#{customerManager.middleName}"/>
+                            <h:message for="middleName"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="surName"><h:outputText value ="Last name"/></label>
+                            <h:inputText id="surName" value="#{customerManager.surName}"/>
+                            <h:message for="surName"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="dob"><h:outputText value ="Date of birth"/></label>
+                            <h:inputText id="dob" value="#{customerManager.dob}" />
+                            <h:message for="dob"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="passportNumber"><h:outputText value ="Passport number"/></label>
+                            <h:inputText id="passportNumber" value="#{customerManager.passportNumber}" />
+                            <h:message for="passportNumber"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="contactNumber"><h:outputText value ="Telephone number"/></label>
+                            <h:inputText id="contactNumber" value="#{customerManager.contactNumber}" />
+                            <h:message for="contactNumber"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="emergencyContactNumber"><h:outputText value ="Emergency contact number"/></label>
+                            <h:inputText id="emergencyContactNumber" value="#{customerManager.emergencyContactNumber}" />
+                            <h:message for="emergencyContactNumber"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="gender"><h:outputText value ="Gender"/></label>
+                            <h:selectOneMenu id="gender" value="#{customerManager.country}">
+                                <f:selectItem itemValue="" itemLabel="Please your gender" />
+                                <f:selectItem itemValue="Male" itemLabel="Male" />
+                                <f:selectItem itemValue="Female" itemLabel="Female" />
+                            </h:selectOneMenu>
+                            <h:message for="gender"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="county"><h:outputText value ="Country"/></label>
+                            <h:selectOneMenu id="county" value="#{customerManager.country}">
+                                <ui:include src="includes/allcountries.xhtml" />
+                            </h:selectOneMenu>
+                            <h:message for="county"/>
+                        </div>
+
+                        <div class="inputField">
+                            <label for="city"><h:outputText value ="City"/></label>
+                            <h:inputText id="city" value="#{customerManager.city}" />
+                            <h:message for="city"/>
+                        </div>
+
+                        <div class="inputField">
+                            <h:commandButton action="#{customerManager.addCustomerToDB()}" class="button" value="add "/>
+                            Already have an account? <h:link value="Sign in here" outcome="login"/>
+                        </div>
+                    </h:form>
+                </div>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>

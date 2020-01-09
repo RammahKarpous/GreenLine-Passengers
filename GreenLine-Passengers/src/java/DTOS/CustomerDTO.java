@@ -15,9 +15,10 @@ public class CustomerDTO {
     private String gender;
     private String country;
     private String city;
+    private int userID;
 
-    public CustomerDTO(int personID, String firstName, String middleName, String surName, String dob, String passportNumber, String contactNumber, String emergencyContactNumber, String gender, String country, String city) {
-        this.customerID = personID;
+    public CustomerDTO(int customerID, String firstName, String middleName, String surName, String dob, String passportNumber, String contactNumber, String emergencyContactNumber, String gender, String country, String city, int userID) {
+        this.customerID = customerID;
         this.firstName = firstName;
         this.middleName = middleName;
         this.surName = surName;
@@ -28,6 +29,15 @@ public class CustomerDTO {
         this.gender = gender;
         this.country = country;
         this.city = city;
+        this.userID = userID;
+    }
+
+    public int getUserID() {
+        return userID;
+    }
+
+    public void setUserID(int userID) {
+        this.userID = userID;
     }
 
     public int getCustomerID() {

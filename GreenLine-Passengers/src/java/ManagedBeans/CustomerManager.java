@@ -132,7 +132,7 @@ public class CustomerManager implements Serializable {
                     new org.apache.derby.jdbc.ClientDriver());
             Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-            PreparedStatement stmt = con.prepareStatement("INSERT INTO CUSTOMER (FIRSTNAME, MIDDLENAME, SURNAME, DOB, PASSPORTNUMBER, CONTACTNUMBER, EMERGENCYCONTACTNUMBER, GENDER, COUNTRY, CITY ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO CUSTOMER (FIRSTNAME, MIDDLENAME, SURNAME, DOB, PASSPORTNUMBER, CONTACTNUMBER, EMERGENCYCONTACTNUMBER, GENDER, COUNTRY, CITY, USERID ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ? , ?)");
             stmt.setString(1, firstName);
             stmt.setString(2, middleName);
             stmt.setString(3, surName);

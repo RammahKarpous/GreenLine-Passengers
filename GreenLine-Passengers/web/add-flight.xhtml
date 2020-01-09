@@ -11,74 +11,68 @@ and open the template in the editor.
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
 
-  <h:body>
-    <ui:composition template="resources/templates/logged-in-template.xhtml">
-      <ui:define name="title">Add flights</ui:define>
-      <ui:define name="content">
-        <div class="wrapper form-wrapper add-flight">
-          <h1>Add flight</h1>
-          <h:form enctype="multipart/form-data">
-            <div class="three-in-a-row">
-              <div class="inputField">
-                <label for="flightNumber"><h:outputText value ="Flight number"/></label>
-                <h:inputText id="flightNumber" value="#{flightManager.flightNumber}"/>
-                <h:message for="flightNumber"/>
-              </div>
+    <h:body>
+        <ui:composition template="resources/templates/logged-in-template.xhtml">
+            <ui:define name="title">Add flights</ui:define>
+            <ui:define name="content">
+                <div class="wrapper form-wrapper add-flight">
+                    <h1>Add flight</h1>
+                    <h:form enctype="multipart/form-data">
+                        <div class="three-in-a-row">
 
-              <div class="inputField">
-                <label for="flightCompany"><h:outputText value ="Flight company"/></label>
-                <h:inputText id="flightCompany" value="#{flightManager.flightCompany}"/>
-                <h:message for="flightCompany"/>
-              </div>
+                            <div class="inputField">
+                                <label for="flightNumber"><h:outputText value ="Flight number"/></label>
+                                <h:inputText id="flightNumber" value="#{flightManager.flightNumber}"/>
+                                <h:message for="flightNumber"/>
+                            </div>
 
-              <div class="inputField">
-                <label for="price"><h:outputText value ="Price"/></label>
-                <h:inputText id="price" value="#{flightManager.price}"/>
-                <h:message for="price"/>
-              </div>
-            </div>
+                            <div class="inputField">
+                                <label for="flightCompany"><h:outputText value ="Flight company"/></label>
+                                <h:inputText id="flightCompany" value="#{flightManager.flightCompany}"/>
+                                <h:message for="flightCompany"/>
+                            </div>
 
-            <div class="two-in-a-row">
-              
-              <div class="two-in-a-row">
-                <div class="inputField">
-                  <label for="departureTime"><h:outputText value="Departure time" /></label>
-                  <h:inputText id="departureTime" value="#{flightManager.departureTime}">   
-                  </h:inputText>
-                  <h:message for="departureTime"/>
+                            <div class="inputField">
+                                <label for="price"><h:outputText value ="Price"/></label>
+                                <h:inputText id="price" value="#{flightManager.price}"/>
+                                <h:message for="price"/>
+                            </div>
+                        </div>
+
+                        <div class="two-in-a-row">
+
+                            <div class="two-in-a-row">
+                                <div class="inputField">
+                                    <label for="departureTime"><h:outputText value="Departure time" /></label>
+                                    <h:inputText id="departureTime" value="#{flightManager.departureTime}">   
+                                    </h:inputText>
+                                    <h:message for="departureTime"/>
+                                </div>
+
+                                <div class="inputField">
+                                    <label for="arrivalTime"><h:outputText value="Arrival time" /></label>
+                                    <h:inputText id="arrivalTime" value="#{flightManager.arrivalTime}">   
+                                    </h:inputText>
+                                    <h:message for="arrivalTime"/>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="two-in-a-row">
+
+                            <div class="inputField">
+                                <label for="city"><h:outputText value ="City"/></label>
+                                <h:inputText id="city" value="#{flightManager.city}" />
+                                <h:message for="city"/>
+                            </div>
+                        </div>
+
+                        <div class="inputField">
+                            <h:commandButton action="#{flightManager.addFlight()}" class="button" value="Add flight"/>
+                        </div>
+                    </h:form>
                 </div>
-
-                <div class="inputField">
-                  <label for="arrivalTime"><h:outputText value="Arrival time" /></label>
-                  <h:inputText id="arrivalTime" value="#{flightManager.arrivalTime}">   
-                  </h:inputText>
-                  <h:message for="arrivalTime"/>
-                </div>
-              </div>
-            </div>
-
-            <div class="two-in-a-row">
-              <div class="inputField">
-                <label for="county"><h:outputText value ="Country"/></label>
-                <h:selectOneListbox id="county" value="#{flightManager.country}">
-                  <f:selectItem itemValue="" itemLabel=""/>
-                </h:selectOneListbox>
-                <h:message for="county"/>
-              </div>
-
-              <div class="inputField">
-                <label for="city"><h:outputText value ="City"/></label>
-                <h:inputText id="city" value="#{flightManager.city}" />
-                <h:message for="city"/>
-              </div>
-            </div>
-
-            <div class="inputField">
-                <h:commandButton action="#{flightManager.addFlight()}" class="button" value="Add flight"/>
-            </div>
-          </h:form>
-        </div>
-      </ui:define>
-    </ui:composition>
-  </h:body>
+            </ui:define>
+        </ui:composition>
+    </h:body>
 </html>

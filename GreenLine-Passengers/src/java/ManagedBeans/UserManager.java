@@ -5,89 +5,63 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import javax.inject.Named;
-import javax.enterprise.context.Dependent;
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
+import javax.enterprise.context.RequestScoped;
 
 @Named(value = "userManager")
-@Dependent
+@RequestScoped
 
-public class UserManager
-{
+public class UserManager {
+
     private int userID;
     private String email;
     private String password;
-    private String passwordCheck;
 
-    public String getPasswordCheck()
-    {
-        return passwordCheck;
-    }
-
-    public void setPasswordCheck(String passwordCheck)
-    {
-        this.passwordCheck = passwordCheck;
-    }
-
-    public int getUserID()
-    {
+    public int getUserID() {
         return userID;
     }
 
-    public String getEmail()
-    {
+    public String getEmail() {
         return email;
     }
 
-    public String getPassword()
-    {
+    public String getPassword() {
         return password;
     }
 
-    public void setUserID(int userID)
-    {
+    public void setUserID(int userID) {
         this.userID = userID;
     }
 
-    public void setEmail(String email)
-    {
+    public void setEmail(String email) {
         this.email = email;
     }
 
-    public void setPassword(String password)
-    {
+    public void setPassword(String password) {
         this.password = password;
     }
 
-    public String addUserToDB()
-    {
-        if (password == passwordCheck)
-        {
-            try
-            {
-                DriverManager.registerDriver(
-                        new org.apache.derby.jdbc.ClientDriver());
-                Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
+    public String addUserToDB() {
+        try {
+            DriverManager.registerDriver(
+                    new org.apache.derby.jdbc.ClientDriver());
+            Connection con = DriverManager.getConnection("jdbc:derby://localhost:1527/Database05", "admin1", "admin1");
 
-                PreparedStatement stmt = con.prepareStatement("INSERT INTO USERS ( EMAIL, PASSWORD ) VALUES ( ?, ? )");
-                stmt.setString(1, email);
-                stmt.setString(2, password);
+            PreparedStatement stmt = con.prepareStatement("INSERT INTO USERS (PASSWORD, EMAIL) VALUES (?, ?)");
 
-                stmt.execute();
+            stmt.setString(1, password);
+            stmt.setString(2, email);
 
-                stmt.close();
-                con.close();
-            }
-            catch (SQLException e)
-            {
-                System.out.println(e);
-            }
+            stmt.executeUpdate();
+
+            stmt.close();
+            con.close();
+            return "login";
+        } catch (SQLException e) {
+            e.printStackTrace();
+            this.email = "";
+            this.password = "";
+            this.userID = 0;
         }
-        else
-        {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Password does not match"));
-        }
-        return null;
+        return "register";
     }
 }
-

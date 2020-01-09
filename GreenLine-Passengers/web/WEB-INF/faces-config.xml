@@ -26,7 +26,7 @@
     <navigation-rule>
         <from-view-id>/login.xhtml</from-view-id>
         <navigation-case>
-            <from-outcome>loginOK</from-outcome>
+            <from-outcome>true</from-outcome>
             <to-view-id>/userpanel.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
